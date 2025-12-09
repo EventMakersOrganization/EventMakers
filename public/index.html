@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EventMakers</title>
+
+    <!-- CSS généré par Tailwind -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="bg-soft font-body text-black">
+    <!-- HEADER -->
+    <iframe
+      src="header.html"
+      class="w-full h-32 border-none"
+      scrolling="no"
+    ></iframe>
+
+    <!-- SECTION HERO -->
+    <section
+      class="container mx-auto px-5 py-16 flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-10"
+    >
+      <div class="max-w-xl">
+        <h1 class="text-h1 font-title text-black leading-tight">
+          Centralisez tous les événements de la vie étudiante d'Esprit sur une
+          seule plateforme web. Agenda unique et notifications pour une
+          organisation simplifiée.
+        </h1>
+
+        <p class="mt-4 text-p italic">
+          "Esprit : Tous vos événements, un seul clic."
+        </p>
+
+        <div class="mt-8 flex gap-6">
+          <button
+            class="px-6 py-3 bg-byzantium text-white rounded-[35px] text-button font-medium font-title"
+          >
+            Explorer les événements
+          </button>
+
+          <button
+            class="px-6 py-3 bg-melon text-black rounded-[35px] text-button font-medium font-title"
+          >
+            Ajouter un événement
+          </button>
+        </div>
+      </div>
+
+      <img
+        src="../images/accueil.png"
+        class="w-[500px] rounded-xl shadow-lg mt-10 md:mt-0"
+        alt="Étudiants travaillant"
+      />
+    </section>
+
+    <!-- SECTION EVENEMENTS -->
+    <section class="container mx-auto px-8 mt-12">
+      <!-- Conteneur relatif pour titre et icônes -->
+      <div class="relative flex justify-center items-center mb-2">
+        <!-- Icône de filtrage à gauche -->
+        <button
+          class="absolute left-16 text-byzantium text-2xl p-2 rounded-full hover:bg-cardbg transition"
+        >
+          <i class="fa-solid fa-filter"></i>
+        </button>
+
+        <!-- Titre centré -->
+        <h2 class="text-h2 font-title text-byzantium">
+          Explorer Nos Événements
+        </h2>
+
+        <!-- Icône de calendrier à droite -->
+        <button
+          class="absolute right-16 text-byzantium text-2xl p-2 rounded-full hover:bg-cardbg transition"
+        >
+          <i class="fa-regular fa-calendar"></i>
+        </button>
+      </div>
+      <p class="text-p mt-2 text-center">
+        Ne manquez pas les activités organisées par les clubs.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 px-10 md:px-16">
+        <!-- 🔹 CARD 1 -->
+        <div
+          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+          >
+            Concert
+          </span>
+
+          <img
+            src="../images/popnight.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">Pop Music Night</h3>
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 12/10/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Bloc G</span>
+          </p>
+          <!-- ICONES EN BAS A DROITE -->
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#8FD4F3'"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+              onmouseover="this.style.color='#F9D5A7'"
+              onmouseout="this.style.color='#F7B194'"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#F9D5A7'"
+            ></i>
+          </div>
+        </div>
+
+        <!-- 🔹 CARD 2 -->
+        <div
+          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+            >Conférence</span
+          >
+          <img
+            src="../images/cybersecurity.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">Cybersecurity Forum</h3>
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 06/11/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Amphi central</span>
+          </p>
+          <!-- ICONES EN BAS A DROITE -->
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#8FD4F3'"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+              onmouseover="this.style.color='#F9D5A7'"
+              onmouseout="this.style.color='#F7B194'"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#F9D5A7'"
+            ></i>
+          </div>
+        </div>
+
+        <!-- 🔹 CARD 3 -->
+        <div
+          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+            >Exposition</span
+          >
+          <img
+            src="../images/intégration.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">Journée d'intégration</h3>
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 03/11/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Bloc G</span>
+          </p>
+          <!-- ICONES EN BAS A DROITE -->
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#8FD4F3'"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+              onmouseover="this.style.color='#F9D5A7'"
+              onmouseout="this.style.color='#F7B194'"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#F9D5A7'"
+            ></i>
+          </div>
+        </div>
+
+        <!-- 🔹 CARD 4 -->
+        <div
+          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+            >Exposition</span
+          >
+          <img
+            src="../images/hightech.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">High Tech</h3>
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 26/11/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Bloc G</span>
+          </p>
+          <!-- ICONES EN BAS A DROITE -->
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#8FD4F3'"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+              onmouseover="this.style.color='#F9D5A7'"
+              onmouseout="this.style.color='#F7B194'"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#F9D5A7'"
+            ></i>
+          </div>
+        </div>
+
+        <!-- 🔹 CARD 5 -->
+        <div
+          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+            >Atelier</span
+          >
+          <img
+            src="../images/reacttail.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">Atelier React + Tailwind</h3>
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 25/11/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Amphi central</span>
+          </p>
+          <!-- ICONES EN BAS A DROITE -->
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#8FD4F3'"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+              onmouseover="this.style.color='#F9D5A7'"
+              onmouseout="this.style.color='#F7B194'"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#F9D5A7'"
+            ></i>
+          </div>
+        </div>
+
+        <!-- 🔹 CARD 6 -->
+        <div
+          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+            >Social & Culture</span
+          >
+          <img
+            src="../images/movienight.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">Movie Night</h3>
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 05/12/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Bloc G</span>
+          </p>
+          <!-- ICONES EN BAS A DROITE -->
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#8FD4F3'"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+              onmouseover="this.style.color='#F9D5A7'"
+              onmouseout="this.style.color='#F7B194'"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#F9D5A7'"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <iframe
+      src="footer.html"
+      class="w-full h-12 border-none mt-20"
+      scrolling="no"
+    ></iframe>
+  </body>
+</html>
