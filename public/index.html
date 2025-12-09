@@ -374,6 +374,41 @@
       </div>
     </section>
 
+    <!-- SECTION MAP -->
+    <section class="container mx-auto px-8 mt-16">
+      <h2 class="text-h2 font-title text-byzantium text-center mb-6">
+        Localiser Les événements
+      </h2>
+
+      <!-- Barre de recherche avec icône -->
+      <div class="flex justify-center mb-4 relative w-full md:w-1/2 mx-auto">
+        <input
+          type="text"
+          id="searchEvent"
+          placeholder="Rechercher un événement..."
+          class="px-10 py-2 rounded-[35px] border border-[#F9D5A7] w-full shadow-lg text-black placeholder-black focus:outline-none focus:ring-2 focus:ring-[#F9D5A7]"
+        />
+        <i
+          class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-black"
+        ></i>
+      </div>
+
+      <!-- Wrapper avec padding horizontal 16px -->
+      <div class="md:px-16">
+        <div class="w-full h-96 rounded-xl overflow-hidden shadow-lg border-2 border-[#F9D5A7]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019342962626!2d10.194973915682196!3d36.84442207995725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd3375c3b7b7c3%3A0xabcdef1234567890!2sEsprit%20School!5e0!3m2!1sfr!2stn!4v1700000000000!5m2!1sfr!2stn"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <iframe
       src="footer.html"
