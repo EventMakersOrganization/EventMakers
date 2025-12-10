@@ -17,11 +17,8 @@
 
   <body class="bg-soft font-body text-black">
     <!-- HEADER -->
-    <iframe
-      src="header.html"
-      class="w-full h-32 border-none"
-      scrolling="no"
-    ></iframe>
+   <div id="headerContainer"></div>
+
 
     <!-- SECTION HERO -->
     <section
@@ -375,7 +372,7 @@
     </section>
 
     <!-- SECTION MAP -->
-    <section class="container mx-auto px-8 mt-16">
+    <section class="container mx-auto px-8 mt-16  mb-10 ">
       <h2 class="text-h2 font-title text-byzantium text-center mb-6">
         Localiser Les événements
       </h2>
@@ -410,10 +407,52 @@
     </section>
 
     <!-- FOOTER -->
-    <iframe
-      src="footer.html"
-      class="w-full h-12 border-none mt-20"
-      scrolling="no"
-    ></iframe>
+   <div id="footerContainer"></div>
+
+
+
+
+   
+    <script>
+  function initSidebar() {
+    const sidebar = document.getElementById("profileSidebar");
+    const backdrop = document.getElementById("sidebarBackdrop");
+    const openBtn = document.getElementById("openSidebar");
+    const closeBtn = document.getElementById("closeSidebar");
+
+    if (!sidebar || !backdrop || !openBtn || !closeBtn) return;
+
+    openBtn.onclick = () => {
+      sidebar.classList.remove("translate-x-full");
+      backdrop.classList.remove("hidden");
+    };
+
+    closeBtn.onclick = () => {
+      sidebar.classList.add("translate-x-full");
+      backdrop.classList.add("hidden");
+    };
+
+    backdrop.onclick = () => {
+      sidebar.classList.add("translate-x-full");
+      backdrop.classList.add("hidden");
+    };
+  }
+
+  // 👉 Attendre que le header soit chargé
+  fetch("./header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("headerContainer").innerHTML = data;
+      initSidebar(); // 🔥 maintenant le script trouve les boutons !
+    });
+
+  fetch("./footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footerContainer").innerHTML = data;
+    });
+</script>
+
+
   </body>
 </html>

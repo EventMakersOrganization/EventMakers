@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mes Favoris – EventMakers</title>
+
+    <!-- CSS Tailwind -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="bg-soft font-body text-black">
+    <!-- HEADER -->
+    <div id="headerContainer"></div>
+
+    <!-- SECTION FAVORIS -->
+    <section class="container mx-auto px-8 mt-14 ">
+      <h2 class="text-h2 font-title text-byzantium text-center mb-10">
+        Mes Favoris
+      </h2>
+
+      <!-- GRILLE DES FAVORIS (max 3 par ligne) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 px-10 md:px-16">
+        <!-- ⭐ CARD 1 -->
+        <div
+          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+          >
+            Concert
+          </span>
+
+          <img
+            src="../images/popnight.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">Pop Music Night</h3>
+
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 12/10/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Bloc G</span>
+          </p>
+
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+            ></i>
+          </div>
+        </div>
+
+        <!-- ⭐ CARD 2 -->
+        <div
+          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+          >
+            Conférence
+          </span>
+
+          <img
+            src="../images/cybersecurity.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">Cybersecurity Forum</h3>
+
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 06/11/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Amphi central</span>
+          </p>
+
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+            ></i>
+          </div>
+        </div>
+
+        <!-- ⭐ CARD 3 -->
+        <div
+          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+          >
+            Expositions
+          </span>
+
+          <img
+            src="../images/intégration.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">Journée d’intégration</h3>
+
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 03/11/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Bloc G</span>
+          </p>
+
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+            ></i>
+          </div>
+        </div>
+
+        <!-- ⭐ CARD 4 -->
+        <div
+          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+          >
+            Social & Culture
+          </span>
+
+          <img
+            src="../images/movienight.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">Movie Night</h3>
+
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 05/12/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Bloc G</span>
+          </p>
+
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footerContainer"></div>
+
+    <script>
+  function initSidebar() {
+    const sidebar = document.getElementById("profileSidebar");
+    const backdrop = document.getElementById("sidebarBackdrop");
+    const openBtn = document.getElementById("openSidebar");
+    const closeBtn = document.getElementById("closeSidebar");
+
+    if (!sidebar || !backdrop || !openBtn || !closeBtn) return;
+
+    openBtn.onclick = () => {
+      sidebar.classList.remove("translate-x-full");
+      backdrop.classList.remove("hidden");
+    };
+
+    closeBtn.onclick = () => {
+      sidebar.classList.add("translate-x-full");
+      backdrop.classList.add("hidden");
+    };
+
+    backdrop.onclick = () => {
+      sidebar.classList.add("translate-x-full");
+      backdrop.classList.add("hidden");
+    };
+  }
+
+  // 👉 Attendre que le header soit chargé
+  fetch("./header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("headerContainer").innerHTML = data;
+      initSidebar(); // 🔥 maintenant le script trouve les boutons !
+    });
+
+  fetch("./footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footerContainer").innerHTML = data;
+    });
+</script>
+
+  </body>
+</html>
