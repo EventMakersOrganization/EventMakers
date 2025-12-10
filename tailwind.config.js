@@ -7,6 +7,7 @@ module.exports = {
         melon: "#F7B194", // Secondaire (filtrer, annuler…)
         nonPhotoBlue: "#A9DDE5", // Tertiaire (réinitialiser filtres…)
         byzantium: "#6A2E59", // Primaire (réserver, discussions…)
+        rosé: "rgba(247, 177, 148, 0.11)",
         byzantium37: "rgba(106, 46, 78, 0.37)",
         xanthous: "#F9D5A7",
         tertbut: "#8FD4F3", // Badges, accents visuels
