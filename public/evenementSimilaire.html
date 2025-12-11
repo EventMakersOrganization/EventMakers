@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création avec événement similaire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-soft min-h-screen p-8 font-body">
+    <div class="max-w-6xl mx-auto bg-[#F0BC58]/10 rounded-3xl border-4 border-xanthous p-8">
+        <div class="flex items-center justify-between mb-8">
+            <button class="w-12 h-12 flex items-center justify-center">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            
+            <h1 class="font-title font-semibold text-h1 text-center flex-1">Création avec événement similaire</h1>
+            
+            <button class="bg-byzantium text-white px-6 py-3 rounded-full font-body font-semibold text-button hover:opacity-90 transition">
+                Créer sans modèle
+            </button>
+        </div>
+        <div class="mb-6">
+            <h2 class="font-title font-semibold text-h2 mb-4">Sélectionnez un événement modèle</h2>
+            
+            <div class="relative">
+                  <button class="absolute right-4 top-1/2 transform -translate-y-1/2">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <input 
+                    type="text" 
+                    placeholder="Rechercher un événement" 
+                    class="w-full px-6 py-4 pr-12 rounded-full border-2 border-gray-300 font-body text-p focus:outline-none focus:border-byzantium"
+                >
+              
+            </div>
+        </div>
+
+        <div class="space-y-4">
+            <div class="bg-xanthous rounded-2xl p-6">
+                <div class="flex items-center mb-3">
+                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9M16.5 3.5l4 4-12 12H4v-4L16.5 3.5z"/>
+                    </svg>
+                    <h3 class="font-title font-semibold text-h2">Réunion Club Informatique</h3>
+                </div>
+                
+                <div class="flex items-center mb-4 ml-11">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <p class="font-body font-semibold text-p">Mardi 23 Octobre | 14H00 - 15H00</p>
+                </div>
+                
+                <button class="bg-byzantium text-white px-8 py-3 rounded-full font-body font-semibold text-button ml-11 hover:opacity-90 transition">
+                    Utiliser ce modèle
+                </button>
+            </div>
+
+
+            <div class="bg-xanthous rounded-2xl p-6">
+                <div class="flex items-center mb-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9M16.5 3.5l4 4-12 12H4v-4L16.5 3.5z"/>
+                    </svg>
+                    <h3 class="font-title font-semibold text-h2">AI conference</h3>
+                </div>
+                
+                <div class="flex items-center mb-4 ml-11">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <p class="font-body font-semibold text-p">Jeudi 26 Octobre | 8H00 - 9H00</p>
+                </div>
+                
+                <button class="bg-byzantium text-white px-8 py-3 rounded-full font-body font-semibold text-button ml-11 hover:opacity-90 transition">
+                    Utilise ce modèle
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
