@@ -1,194 +1,187 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Calendrier - EventMakers</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calendrier - EventMakers</title>
+  </head>
 
-<body class="bg-soft">
+  <body class="bg-soft">
+    <!-- HEADER -->
+    <div id="headerContainer"></div>
 
-  
- <!-- HEADER -->
-   <div id="headerContainer"></div>
-
-  <!-- 🌟 SECTION CALENDRIER -->
-  <section class="container mx-auto px-5 mt-10 mb-20">
-
- 
-
-    <!-- 🌿 Conteneur du calendrier -->
- <div class="bg-rosé p-6 rounded-3xl shadow-lg border border-melon mx-4">
-
-
-
-     <!-- Navigation mois -->
-<div class="flex justify-center items-center gap-6 mb-6">
-    
-    <button id="prevMonth" 
-        class="px-4 py-2 bg-byzantium text-white rounded-xl hover:bg-byzantium/80">
-        ←
+    <button onclick="history.back()" class="ml-5 mt-5 text-3xl text-byzantium">
+      <i class="fa-solid fa-arrow-left"></i>
     </button>
 
-    <h2 id="monthYear" class="font-title text-2xl"></h2>
+    <!-- 🌟 SECTION CALENDRIER -->
+    <section class="container mx-auto px-5 mt-10 mb-20">
+      <!-- 🌿 Conteneur du calendrier -->
+      <div class="bg-rosé p-6 rounded-3xl shadow-lg border border-melon mx-4">
+        <!-- Navigation mois -->
+        <div class="flex justify-center items-center gap-6 mb-6">
+          <button
+            id="prevMonth"
+            class="px-4 py-2 bg-byzantium text-white rounded-xl hover:bg-byzantium/80"
+          >
+            ←
+          </button>
 
-    <button id="nextMonth" 
-        class="px-4 py-2 bg-byzantium text-white rounded-xl hover:bg-byzantium/80">
-        →
-    </button>
+          <h2 id="monthYear" class="font-title text-2xl"></h2>
 
-</div>
+          <button
+            id="nextMonth"
+            class="px-4 py-2 bg-byzantium text-white rounded-xl hover:bg-byzantium/80"
+          >
+            →
+          </button>
+        </div>
 
+        <!-- Grille calendrier -->
+        <div class="grid grid-cols-7 gap-3 text-center font-body text-lg">
+          <div class="font-bold">Lun</div>
+          <div class="font-bold">Mar</div>
+          <div class="font-bold">Mer</div>
+          <div class="font-bold">Jeu</div>
+          <div class="font-bold">Ven</div>
+          <div class="font-bold text-melon">Sam</div>
+          <div class="font-bold text-melon">Dim</div>
+        </div>
 
-      <!-- Grille calendrier -->
-      <div class="grid grid-cols-7 gap-3 text-center font-body text-lg">
-        <div class="font-bold">Lun</div>
-        <div class="font-bold">Mar</div>
-        <div class="font-bold">Mer</div>
-        <div class="font-bold">Jeu</div>
-        <div class="font-bold">Ven</div>
-        <div class="font-bold text-melon">Sam</div>
-        <div class="font-bold text-melon">Dim</div>
+        <div id="calendarDays" class="grid grid-cols-7 gap-3 mt-4"></div>
       </div>
+    </section>
 
-      <div id="calendarDays" class="grid grid-cols-7 gap-3 mt-4"></div>
+    <!-- FOOTER -->
+    <div id="footerContainer"></div>
 
-    </div>
-  </section>
+    <script>
+      //header et footer et sidebar
+      function initSidebar() {
+        const sidebar = document.getElementById("profileSidebar");
+        const backdrop = document.getElementById("sidebarBackdrop");
+        const openBtn = document.getElementById("openSidebar");
+        const closeBtn = document.getElementById("closeSidebar");
 
+        if (!sidebar || !backdrop || !openBtn || !closeBtn) return;
 
+        openBtn.onclick = () => {
+          sidebar.classList.remove("translate-x-full");
+          backdrop.classList.remove("hidden");
+        };
 
+        closeBtn.onclick = () => {
+          sidebar.classList.add("translate-x-full");
+          backdrop.classList.add("hidden");
+        };
 
-   <!-- FOOTER -->
-   <div id="footerContainer"></div>
+        backdrop.onclick = () => {
+          sidebar.classList.add("translate-x-full");
+          backdrop.classList.add("hidden");
+        };
+      }
 
-  <script >
-    //header et footer et sidebar
-     function initSidebar() {
-    const sidebar = document.getElementById("profileSidebar");
-    const backdrop = document.getElementById("sidebarBackdrop");
-    const openBtn = document.getElementById("openSidebar");
-    const closeBtn = document.getElementById("closeSidebar");
+      // 👉 Attendre que le header soit chargé
+      fetch("./header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("headerContainer").innerHTML = data;
+          initSidebar(); // 🔥 maintenant le script trouve les boutons !
+        });
 
-    if (!sidebar || !backdrop || !openBtn || !closeBtn) return;
+      fetch("./footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footerContainer").innerHTML = data;
+        });
 
-    openBtn.onclick = () => {
-      sidebar.classList.remove("translate-x-full");
-      backdrop.classList.remove("hidden");
-    };
+      //caldenrier js
+      const events = [
+        { day: 5, month: 12, year: 2025 },
+        { day: 16, month: 12, year: 2025 },
+        { day: 28, month: 12, year: 2025 },
+        { day: 24, month: 12, year: 2025 },
+      ];
+      const monthYear = document.getElementById("monthYear");
+      const calendarDays = document.getElementById("calendarDays");
 
-    closeBtn.onclick = () => {
-      sidebar.classList.add("translate-x-full");
-      backdrop.classList.add("hidden");
-    };
+      let date = new Date();
 
-    backdrop.onclick = () => {
-      sidebar.classList.add("translate-x-full");
-      backdrop.classList.add("hidden");
-    };
-  }
+      function generateCalendar() {
+        const year = date.getFullYear();
+        const month = date.getMonth();
 
-  // 👉 Attendre que le header soit chargé
-  fetch("./header.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("headerContainer").innerHTML = data;
-      initSidebar(); // 🔥 maintenant le script trouve les boutons !
-    });
+        // Affichage du mois
+        monthYear.textContent = date.toLocaleDateString("fr-FR", {
+          month: "long",
+          year: "numeric",
+        });
 
-  fetch("./footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footerContainer").innerHTML = data;
-    });
+        // Supprimer anciennes cases
+        calendarDays.innerHTML = "";
 
-    //caldenrier js
-    const events = [
-    { day: 5, month: 12, year: 2025 },
-    { day: 16, month: 12, year: 2025 },
-    { day: 28, month: 12, year: 2025 },
-    { day: 24, month: 12, year: 2025 }
-];
-    const monthYear = document.getElementById("monthYear");
-const calendarDays = document.getElementById("calendarDays");
+        // Début du mois
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-let date = new Date();
+        // Décalage pour Lundi = 1
+        const startIndex = firstDay === 0 ? 6 : firstDay - 1;
 
-function generateCalendar() {
-    const year = date.getFullYear();
-    const month = date.getMonth();
+        // Cases vides
+        for (let i = 0; i < startIndex; i++) {
+          calendarDays.innerHTML += `<div></div>`;
+        }
 
-    // Affichage du mois
-    monthYear.textContent = date.toLocaleDateString("fr-FR", {
-        month: "long",
-        year: "numeric"
-    });
+        // Jours du mois
+        for (let i = 1; i <= daysInMonth; i++) {
+          // Vérifie si ce jour a un event
+          const hasEvent = events.some(
+            (ev) => ev.day === i && ev.month === month + 1 && ev.year === year
+          );
 
-    // Supprimer anciennes cases
-    calendarDays.innerHTML = "";
+          const isToday =
+            i === new Date().getDate() &&
+            month === new Date().getMonth() &&
+            year === new Date().getFullYear();
 
-    // Début du mois
-    const firstDay = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-    // Décalage pour Lundi = 1
-    const startIndex = (firstDay === 0) ? 6 : firstDay - 1;
-
-    // Cases vides
-    for (let i = 0; i < startIndex; i++) {
-        calendarDays.innerHTML += `<div></div>`;
-    }
-
-    // Jours du mois
-   for (let i = 1; i <= daysInMonth; i++) {
-
-    // Vérifie si ce jour a un event
-    const hasEvent = events.some(ev =>
-        ev.day === i &&
-        ev.month === month + 1 &&
-        ev.year === year
-    );
-
-    const isToday =
-    i === new Date().getDate() &&
-    month === new Date().getMonth() &&
-    year === new Date().getFullYear();
-
-
-    calendarDays.innerHTML += `
+          calendarDays.innerHTML += `
         <div class="h-14 flex items-center justify-center relative">
 
         <span class="
-            ${isToday ? "w-10 h-10 border-2 border-byzantium rounded-full flex items-center justify-center" : ""}
+            ${
+              isToday
+                ? "w-10 h-10 border-2 border-byzantium rounded-full flex items-center justify-center"
+                : ""
+            }
         ">
             ${i}
         </span>
 
-        ${hasEvent ? `
+        ${
+          hasEvent
+            ? `
             <span class="absolute left-1/2 -bottom-1 transform -translate-x-1/2
             w-2 h-2 bg-byzantium rounded-full"></span>
-        ` : ""}
+        `
+            : ""
+        }
     </div>
     `;
-}
+        }
+      }
 
+      document.getElementById("prevMonth").onclick = () => {
+        date.setMonth(date.getMonth() - 1);
+        generateCalendar();
+      };
 
-}
+      document.getElementById("nextMonth").onclick = () => {
+        date.setMonth(date.getMonth() + 1);
+        generateCalendar();
+      };
 
-document.getElementById("prevMonth").onclick = () => {
-    date.setMonth(date.getMonth() - 1);
-    generateCalendar();
-};
-
-document.getElementById("nextMonth").onclick = () => {
-    date.setMonth(date.getMonth() + 1);
-    generateCalendar();
-};
-
-generateCalendar();
-
-  </script>
-
-</body>
+      generateCalendar();
+    </script>
+  </body>
 </html>
