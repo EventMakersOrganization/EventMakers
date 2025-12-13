@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mes Statistiques - EventMakers</title>
+
+    <!-- CSS généré par Tailwind -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Chart.js for charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body class="bg-soft font-body text-black">
+    <!-- HEADER -->
+    <div id="headerContainer"></div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container mx-auto px-5 py-8 max-w-6xl">
+      <!-- Header Section -->
+      <div class="flex items-center justify-between mb-8">
+        <div class="flex items-center gap-4">
+          <button onclick="history.back()" class="text-black hover:text-byzantium transition-colors">
+            <i class="fa-solid fa-arrow-left text-xl"></i>
+          </button>
+          <h1 class="text-h1 font-title text-byzantium">Mes Statistiques</h1>
+        </div>
+        <button class="bg-byzantium text-white px-6 py-3 rounded-[35px] font-medium font-title hover:bg-byzantium/90 transition-colors">
+          Mes Evenements
+        </button>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <!-- Card 1 -->
+        <div class="bg-xanthous rounded-2xl p-6 shadow-lg">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-4xl font-bold text-black mb-2">5</p>
+              <p class="text-lg text-black">Evenements Favoris</p>
+            </div>
+            <i class="fa-solid fa-heart text-4xl text-byzantium"></i>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-xanthous rounded-2xl p-6 shadow-lg">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-4xl font-bold text-black mb-2">8</p>
+              <p class="text-lg text-black">Evenements Ajouté à L'agenda</p>
+            </div>
+            <i class="fa-regular fa-calendar text-4xl text-byzantium"></i>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-xanthous rounded-2xl p-6 shadow-lg">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-4xl font-bold text-black mb-2">6</p>
+              <p class="text-lg text-black">Evenements Ayant Participé</p>
+            </div>
+            <i class="fa-regular fa-clock text-4xl text-byzantium"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Pie Chart -->
+        <div class="bg-white rounded-2xl border-2 border-xanthous p-6 shadow-lg">
+          <h2 class="text-h2 font-title text-byzantium mb-6 text-center">Répartition des Types d'Événements</h2>
+          <div class="h-80 flex items-center justify-center">
+            <canvas id="pieChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Line Chart -->
+        <div class="bg-white rounded-2xl border-2 border-xanthous p-6 shadow-lg">
+          <h2 class="text-h2 font-title text-byzantium mb-6 text-center">Évolution des clubs selon leur activité</h2>
+          <div class="h-80 flex items-center justify-center">
+            <canvas id="lineChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footerContainer"></div>
+
+    <script>
+      function initSidebar() {
+        const sidebar = document.getElementById("profileSidebar");
+        const backdrop = document.getElementById("sidebarBackdrop");
+        const openBtn = document.getElementById("openSidebar");
+        const closeBtn = document.getElementById("closeSidebar");
+
+        if (!sidebar || !backdrop || !openBtn || !closeBtn) return;
+
+        openBtn.onclick = () => {
+          sidebar.classList.remove("translate-x-full");
+          backdrop.classList.remove("hidden");
+        };
+
+        closeBtn.onclick = () => {
+          sidebar.classList.add("translate-x-full");
+          backdrop.classList.add("hidden");
+        };
+
+        backdrop.onclick = () => {
+          sidebar.classList.add("translate-x-full");
+          backdrop.classList.add("hidden");
+        };
+      }
+
+      fetch("./header.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("headerContainer").innerHTML = data;
+          initSidebar();
+        });
+
+      fetch("./footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footerContainer").innerHTML = data;
+        });
+
+      // Initialize Pie Chart
+      const pieCtx = document.getElementById('pieChart').getContext('2d');
+      new Chart(pieCtx, {
+        type: 'pie',
+        data: {
+          labels: ['Sport', 'Atelier', 'Concert', 'Conférence', 'Expositions', 'Hackathon'],
+          datasets: [{
+            data: [50, 15, 12, 10, 8, 5],
+            backgroundColor: [
+              'rgba(106, 46, 89, 0.6)', // light purple for Sport (50%)
+              '#8FD4F3', // light blue for Atelier (15%)
+              '#4CAF50', // green for Concert
+              '#FF9800', // orange for Conférence
+              '#FF6B35', // darker orange for Expositions
+              '#F7B194'  // light orange for Hackathon
+            ],
+            borderWidth: 2,
+            borderColor: '#fff'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                padding: 15,
+                font: {
+                  family: 'Nunito',
+                  size: 14
+                }
+              }
+            }
+          }
+        }
+      });
+
+      // Initialize Line Chart
+      const lineCtx = document.getElementById('lineChart').getContext('2d');
+      new Chart(lineCtx, {
+        type: 'line',
+        data: {
+          labels: ['Semaine 1', 'Semaine 2', 'Semaine 3', 'Semaine 4', 'Semaine 5', 'Semaine 6'],
+          datasets: [
+            {
+              label: 'GDSC',
+              data: [0, 20, 45, 60, 75, 80],
+              borderColor: '#6A2E59',
+              backgroundColor: 'rgba(106, 46, 89, 0.1)',
+              tension: 0.4,
+              fill: true
+            },
+            {
+              label: 'IEEE',
+              data: [0, 15, 30, 45, 55, 60],
+              borderColor: '#FF9800',
+              backgroundColor: 'rgba(255, 152, 0, 0.1)',
+              tension: 0.4,
+              fill: true
+            },
+            {
+              label: 'Enactus',
+              data: [0, 10, 20, 30, 40, 45],
+              borderColor: '#8FD4F3',
+              backgroundColor: 'rgba(143, 212, 243, 0.1)',
+              tension: 0.4,
+              fill: true
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                padding: 15,
+                font: {
+                  family: 'Nunito',
+                  size: 14
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                font: {
+                  family: 'Nunito'
+                }
+              }
+            },
+            x: {
+              ticks: {
+                font: {
+                  family: 'Nunito'
+                }
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+

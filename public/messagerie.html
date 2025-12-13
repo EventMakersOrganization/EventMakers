@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messagerie - EventMakers</title>
+
+    <!-- Tailwind CSS compilé -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="bg-soft font-body text-black">
+    <!-- HEADER -->
+    <div id="headerContainer"></div>
+
+    <!-- MAIN -->
+    <div class="container mx-auto px-4 py-8 max-w-5xl">
+      <div class="bg-white border-2 border-xanthous rounded-3xl shadow-lg overflow-hidden">
+
+        <!-- CHAT HEADER -->
+        <div class="bg-soft border-b border-xanthous px-6 py-4 flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <button onclick="history.back()" class="hover:text-byzantium transition">
+              <i class="fa-solid fa-arrow-left text-lg"></i>
+            </button>
+
+            <div class="w-10 h-10 rounded-full bg-white border border-xanthous flex items-center justify-center">
+              <i class="fa-regular fa-image text-gray-600"></i>
+            </div>
+
+            <h2 class="font-title text-lg">Zeineb Ghezaiel</h2>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <button class="hover:text-byzantium transition">
+              <i class="fa-solid fa-phone"></i>
+            </button>
+            <button class="hover:text-byzantium transition">
+              <i class="fa-solid fa-circle-info"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- MESSAGES -->
+        <div class="h-[420px] overflow-y-auto p-6 bg-soft space-y-4">
+
+          <!-- Message 1 -->
+          <div class="flex justify-end">
+            <div class="bg-melon px-4 py-2 rounded-2xl max-w-xs text-sm">
+              Hi
+            </div>
+          </div>
+
+          <!-- Message 2 -->
+          <div class="flex justify-end items-end gap-2">
+            <div class="bg-melon px-4 py-2 rounded-2xl max-w-xs text-sm">
+              Fine, u?
+            </div>
+            <div class="w-7 h-7 rounded-full bg-white border border-xanthous flex items-center justify-center">
+              <i class="fa-regular fa-image text-xs text-gray-600"></i>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- INPUT AREA -->
+        <div class="bg-soft border-t border-xanthous p-5 space-y-4">
+
+          <!-- Image preview -->
+          <div class="flex gap-4">
+            <div class="w-24 h-20 rounded-xl border-2 border-xanthous bg-white flex items-center justify-center">
+              <i class="fa-regular fa-image text-2xl text-gray-400"></i>
+            </div>
+            <div class="w-24 h-20 rounded-xl border-2 border-xanthous bg-white flex items-center justify-center">
+              <i class="fa-regular fa-image text-2xl text-gray-400"></i>
+            </div>
+            <div class="w-24 h-20 rounded-xl border-2 border-xanthous bg-white flex items-center justify-center">
+              <i class="fa-regular fa-image text-2xl text-gray-400"></i>
+            </div>
+          </div>
+
+          <!-- Input -->
+          <div class="flex items-center gap-3">
+            <button class="w-10 h-10 rounded-full border-2 border-xanthous bg-white hover:bg-melon transition">
+              <i class="fa-regular fa-image"></i>
+            </button>
+
+            <input
+              type="text"
+              placeholder="Ecrire un message"
+              class="flex-1 px-5 py-3 rounded-full border-2 border-xanthous focus:ring-2 focus:ring-xanthous outline-none"
+            />
+
+            <button class="w-10 h-10 rounded-full border-2 border-xanthous bg-white hover:bg-melon transition">
+              <i class="fa-regular fa-face-smile text-lg"></i>
+            </button>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex justify-center gap-6 pt-2">
+            <button class="px-10 py-3 rounded-full bg-byzantium text-white font-title hover:bg-byzantium/90 transition">
+              Modifier
+            </button>
+            <button class="px-10 py-3 rounded-full bg-melon text-black font-title hover:bg-melon/90 transition">
+              Envoyer
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footerContainer"></div>
+
+    <!-- JS -->
+    <script>
+      fetch("./header.html")
+        .then(res => res.text())
+        .then(data => (document.getElementById("headerContainer").innerHTML = data));
+
+      fetch("./footer.html")
+        .then(res => res.text())
+        .then(data => (document.getElementById("footerContainer").innerHTML = data));
+    </script>
+  </body>
+</html>
