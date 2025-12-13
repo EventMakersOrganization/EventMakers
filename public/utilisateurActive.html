@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Utilisateirs Actives</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-white-100 min-h-screen flex justify-center items-start p-10 font-body">
+  <div class="w-full max-w-xl bg-cardBg border-2 border-borderSoft rounded-3xl p-6">
+    <div class="flex items-center gap-4 mb-6">
+      <button class="w-12 h-12 flex items-center justify-center">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+            </button>
+      <h2 class="font-title text-lg font-semibold">Active</h2>
+    </div>
+
+    <div class="space-y-4">
+      <div class="flex items-center justify-between bg-itemBg border border-melon rounded-full px-4 py-3">
+        <div class="flex items-center gap-3">
+           <div class="w-14 h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+          <span class="font-semibold">Zeineb Ghezaiel</span>
+        </div>
+        <span class="text-check text-xl">✓</span>
+      </div>
+
+      <div class="flex items-center justify-between bg-itemBg border border-melon rounded-full px-4 py-3">
+        <div class="flex items-center gap-3">
+          <div class="w-14 h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+          <span class="font-semibold">Abir Ben Brahem</span>
+        </div>
+        <span class="text-check text-xl">✓</span>
+      </div>
+
+      <div class="flex items-center justify-between bg-itemBg border border-melon rounded-full px-4 py-3">
+        <div class="flex items-center gap-3">
+           <div class="w-14 h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+          <span class="font-semibold">Kmar Ben Mbarek</span>
+        </div>
+        <span class="text-check text-xl">✓</span>
+      </div>
+
+
+      <div class="flex items-center justify-between bg-itemBg border border-melon rounded-full px-4 py-3">
+        <div class="flex items-center gap-3">
+           <div class="w-14 h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+          <span class="font-semibold">Zeineb Ghezaiel</span>
+        </div>
+        <span class="text-check text-xl">✓</span>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cardBg: "#FFF4EE",
+            itemBg: "#FDEBD3",
+            borderSoft: "#F6A58A",
+            melon: "#F7B194",
+            check: "#6CCF6A"
+          },
+          fontFamily: {
+            title: ["Poppins", "sans-serif"],
+            body: ["Nunito", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</html>
