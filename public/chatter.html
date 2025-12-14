@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat - Event Makers</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-soft">
+    <!-- HEADER -->
+    <div id="headerContainer"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mx-auto px-5 py-10">
+      <!-- CHAT CONTAINER -->
+      <section class="max-w-5xl mx-auto">
+        <div class="bg-soft border-4 border-melon rounded-3xl shadow-lg overflow-hidden">
+          <!-- CHAT HEADER -->
+          <div class="bg-soft border-b-2 border-melon px-8 py-6">
+            <div class="flex items-center justify-between">
+              <!-- Left: Back button + Profile -->
+              <div class="flex items-center gap-6">
+                <button
+                  onclick="window.history.back()"
+                  class="w-12 h-12 rounded-full bg-white border-2 border-melon flex items-center justify-center hover:bg-melon transition-all"
+                >
+                  <i class="fas fa-chevron-left text-black text-xl"></i>
+                </button>
+                
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded border-2 border-black flex items-center justify-center bg-white overflow-hidden relative">
+                    <img src="../images/zeineb.png" alt="Zeineb Ghezaiel" class="w-full h-full object-cover">
+                    <!-- Indicateur en ligne -->
+                    <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
+                  </div>
+                  <div>
+                    <h2 class="font-title text-h2 font-semibold text-black">
+                      Zeineb Ghezaiel
+                    </h2>
+                    <p class="font-body text-sm text-gray-600">En ligne</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Actions -->
+              <div class="flex items-center gap-4">
+                <button class="w-10 h-10 rounded-full hover:bg-melon transition-all flex items-center justify-center">
+                  <i class="fas fa-phone text-black text-xl"></i>
+                </button>
+                <button class="w-10 h-10 rounded-full hover:bg-melon transition-all flex items-center justify-center">
+                  <i class="fas fa-info-circle text-black text-xl"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CHAT MESSAGES -->
+          <div id="chatMessages" class="px-8 py-10 min-h-[500px] max-h-[600px] overflow-y-auto bg-soft">
+            <!-- Séparateur de date -->
+            <div class="flex items-center justify-center mb-6">
+              <span class="bg-white px-4 py-2 rounded-full font-body text-xs text-gray-600 border border-gray-300">Aujourd'hui</span>
+            </div>
+
+            <!-- Message received (left) -->
+            <div class="flex items-start gap-4 mb-8">
+              <div class="w-10 h-10 rounded border-2 border-black flex items-center justify-center bg-white flex-shrink-0 overflow-hidden">
+                <img src="../images/zeineb.png" alt="Zeineb" class="w-full h-full object-cover">
+              </div>
+              <div class="flex flex-col gap-2">
+                <div class="bg-melon px-6 py-3 rounded-3xl inline-block">
+                  <p class="font-body text-lg text-black">Hi</p>
+                </div>
+                <div class="bg-melon px-6 py-3 rounded-3xl inline-block">
+                  <p class="font-body text-lg text-black">hru?</p>
+                </div>
+                <span class="font-body text-xs text-gray-500 ml-2">10:30</span>
+              </div>
+            </div>
+
+            <!-- Message sent (right) -->
+            <div class="flex items-start gap-4 mb-8 justify-end">
+              <div class="flex flex-col gap-2 items-end">
+                <div class="bg-melon px-6 py-3 rounded-3xl inline-block">
+                  <p class="font-body text-lg text-black">Hi</p>
+                </div>
+                <div class="bg-melon px-6 py-3 rounded-3xl inline-block">
+                  <p class="font-body text-lg text-black">Fine , u?</p>
+                </div>
+                <div class="flex items-center gap-2 justify-end">
+                  <span class="font-body text-xs text-gray-500">10:32</span>
+                  <i class="fas fa-check-double text-blue-500 text-xs"></i>
+                </div>
+              </div>
+              <div class="w-10 h-10 rounded border-2 border-black flex items-center justify-center bg-white flex-shrink-0 overflow-hidden">
+                <img src="../images/abir.png" alt="Vous" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+            <!-- Indicateur de frappe -->
+            <div class="flex items-start gap-4 mb-8">
+              <div class="w-10 h-10 rounded border-2 border-black flex items-center justify-center bg-white flex-shrink-0 overflow-hidden">
+                <img src="../images/zeineb.png" alt="Zeineb" class="w-full h-full object-cover">
+              </div>
+              <div class="bg-melon px-6 py-3 rounded-3xl inline-block">
+                <div class="flex gap-1">
+                  <span class="w-2 h-2 bg-black rounded-full animate-bounce"></span>
+                  <span class="w-2 h-2 bg-black rounded-full animate-bounce" style="animation-delay: 0.2s"></span>
+                  <span class="w-2 h-2 bg-black rounded-full animate-bounce" style="animation-delay: 0.4s"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CHAT INPUT -->
+          <div class="bg-soft border-t-2 border-melon px-8 py-6">
+            <div class="flex items-center gap-4">
+              <!-- Image attachment button -->
+              <button class="w-12 h-12 rounded border-2 border-black flex items-center justify-center bg-white hover:bg-melon transition-all flex-shrink-0">
+                <i class="fas fa-image text-black text-xl"></i>
+              </button>
+
+              <!-- Input field -->
+              <div class="flex-1 relative">
+                <input
+                  id="messageInput"
+                  type="text"
+                  placeholder="Ecrire un message"
+                  class="w-full px-6 py-3 rounded-full border-2 border-black bg-white font-body text-lg text-black focus:outline-none focus:border-byzantium pr-14"
+                  onkeypress="handleKeyPress(event)"
+                />
+                <!-- Emoji button inside input -->
+                <button class="absolute right-4 top-1/2 transform -translate-y-1/2">
+                  <span class="text-2xl">😊</span>
+                </button>
+              </div>
+
+              <!-- Send button -->
+              <button onclick="sendMessage()" class="w-12 h-12 rounded-full flex items-center justify-center bg-black hover:bg-byzantium transition-all flex-shrink-0">
+                <i class="fas fa-paper-plane text-white text-xl"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footerContainer"></div>
+
+    <!-- Bouton Back to Top -->
+    <button 
+      id="backToTop"
+      onclick="scrollToTop()"
+      class="hidden fixed bottom-8 right-8 w-14 h-14 bg-byzantium text-white rounded-full shadow-lg hover:bg-opacity-90 transition-all z-50 flex items-center justify-center">
+      <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <!-- SCRIPTS -->
+    <script>
+      function initSidebar() {
+        const sidebar = document.getElementById("profileSidebar");
+        const backdrop = document.getElementById("sidebarBackdrop");
+        const openBtn = document.getElementById("openSidebar");
+        const closeBtn = document.getElementById("closeSidebar");
+
+        if (!sidebar || !backdrop || !openBtn || !closeBtn) return;
+
+        openBtn.onclick = () => {
+          sidebar.classList.remove("translate-x-full");
+          backdrop.classList.remove("hidden");
+        };
+
+        closeBtn.onclick = () => {
+          sidebar.classList.add("translate-x-full");
+          backdrop.classList.add("hidden");
+        };
+
+        backdrop.onclick = () => {
+          sidebar.classList.add("translate-x-full");
+          backdrop.classList.add("hidden");
+        };
+      }
+
+      // 👉 Attendre que le header soit chargé
+      fetch("./header.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("headerContainer").innerHTML = data;
+          initSidebar(); // 🔥 maintenant le script trouve les boutons !
+        });
+
+      fetch("./footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footerContainer").innerHTML = data;
+        });
+
+      // Scroll automatique vers le bas au chargement
+      function scrollToBottom() {
+        const chatMessages = document.getElementById('chatMessages');
+        if (chatMessages) {
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+      }
+
+      // Appeler au chargement
+      window.addEventListener('load', scrollToBottom);
+
+      // Envoyer un message
+      function sendMessage() {
+        const input = document.getElementById('messageInput');
+        const message = input.value.trim();
+        
+        if (message) {
+          const chatMessages = document.getElementById('chatMessages');
+          const now = new Date();
+          const time = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+          
+          // Créer le nouveau message
+          const messageDiv = document.createElement('div');
+          messageDiv.className = 'flex items-start gap-4 mb-8 justify-end';
+          messageDiv.innerHTML = `
+            <div class="flex flex-col gap-2 items-end">
+              <div class="bg-melon px-6 py-3 rounded-3xl inline-block">
+                <p class="font-body text-lg text-black">${message}</p>
+              </div>
+              <div class="flex items-center gap-2 justify-end">
+                <span class="font-body text-xs text-gray-500">${time}</span>
+                <i class="fas fa-check text-gray-400 text-xs"></i>
+              </div>
+            </div>
+            <div class="w-10 h-10 rounded border-2 border-black flex items-center justify-center bg-white flex-shrink-0 overflow-hidden">
+              <img src="../images/abir.png" alt="Vous" class="w-full h-full object-cover">
+            </div>
+          `;
+          
+          // Supprimer l'indicateur de frappe s'il existe
+          const typingIndicator = chatMessages.querySelector('.animate-bounce')?.closest('.flex.items-start');
+          if (typingIndicator) {
+            typingIndicator.remove();
+          }
+          
+          // Ajouter le message
+          chatMessages.appendChild(messageDiv);
+          
+          // Vider l'input
+          input.value = '';
+          
+          // Scroll vers le bas
+          scrollToBottom();
+        }
+      }
+
+      // Envoyer avec Entrée
+      function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+          sendMessage();
+        }
+      }
+
+      // Back to Top
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Afficher/masquer le bouton Back to Top
+      window.addEventListener('scroll', () => {
+        const backToTop = document.getElementById('backToTop');
+        if (window.scrollY > 300) {
+          backToTop.classList.remove('hidden');
+          backToTop.classList.add('flex');
+        } else {
+          backToTop.classList.add('hidden');
+          backToTop.classList.remove('flex');
+        }
+      });
+    </script>
+  </body>
+</html>
