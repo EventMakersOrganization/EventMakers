@@ -166,7 +166,7 @@
     <main class="container mx-auto px-5 py-8">
       <!-- Back Arrow -->
       <button
-        onclick="history.back()"
+        onclick="window.location.href='creer evenement acceuil.html'"
         class="mb-6 text-byzantium text-2xl hover:text-byzantium/80 transition-colors"
       >
         <i class="fa-solid fa-arrow-left"></i>
@@ -465,14 +465,15 @@
           <!-- Buttons -->
           <div class="flex gap-4 justify-center pt-6">
             <button
-              type="submit"
+              type="button"
+              onclick="window.location.href='index.html'"
               class="px-8 py-3 bg-byzantium text-white rounded-[35px] text-button font-medium font-title hover:bg-byzantium/90 transition-colors"
             >
               Créer
             </button>
             <button
               type="button"
-              onclick="history.back()"
+              onclick="window.location.href='index.html'"
               class="px-8 py-3 bg-melon text-black rounded-[35px] text-button font-medium font-title hover:bg-melon/80 transition-colors"
             >
               Annuler

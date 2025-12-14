@@ -20,7 +20,119 @@
 
   <body class="bg-soft font-body text-black">
     <!-- HEADER -->
-    <div id="headerContainer"></div>
+    <header class="bg-soft shadow-sm sticky top-0 z-50">
+      <nav class="container mx-auto px-5 py-4">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <div
+              class="w-8 h-8 bg-byzantium rounded-lg flex items-center justify-center"
+            >
+              <svg
+                class="w-5 h-5 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+
+            <span class="font-title text-2xl font-semibold">
+              <span class="text-melon">Event</span>
+              <span class="text-byzantium">Makers</span>
+            </span>
+          </div>
+
+           <!-- MENU DE NAVIGATION -->
+          <div class="hidden md:flex items-center space-x-8 font-body text-lg">
+            <a href="index.html" class="hover:text-byzantium transition-colors">Accueil</a>
+            <a href="index.html#eventsSection" class="hover:text-byzantium transition-colors">Événements</a>
+            <a href="apropos.html" class="hover:text-byzantium transition-colors">À propos</a>
+          </div>
+
+          <!-- User Actions -->
+          <div class="flex items-center space-x-4">
+            <!-- Messagerie -->
+            <button
+              onclick="window.location.href='ListeDesMessages.html'"
+              class="w-10 h-10 rounded-full bg-black border-2 border-gray-200 flex items-center justify-center hover:border-byzantium transition-colors"
+            >
+              <i class="fa-regular fa-comment text-white"></i>
+            </button>
+
+            <!-- Profil : ouvrir sidebar -->
+            <button
+              id="openSidebar"
+              class="w-10 h-10 rounded-full bg-black border-2 border-gray-200 flex items-center justify-center hover:border-byzantium transition-colors"
+            >
+              <i class="fa-regular fa-user text-white"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ⭐ SIDEBAR MODERNE THEME EVENTMAKERS ⭐ -->
+    <div
+      id="profileSidebar"
+      class="fixed top-0 right-0 w-80 h-screen bg-gradient-to-b from-byzantium to-black shadow-2xl rounded-l-3xl transform translate-x-full transition-transform duration-300 z-50 text-white font-body"
+    >
+      <!-- PROFIL -->
+      <div class="p-6 text-center border-b border-white/20">
+        <div
+          class="w-24 h-24 rounded-full overflow-hidden mx-auto border-4 border-white/30 shadow-lg"
+        >
+          <img src="images/profil.jpg" class="w-full h-full object-cover" />
+        </div>
+
+        <h3 class="font-title text-xl mt-4">yassine belaid</h3>
+        <p class="text-sm text-white/70">Bienvenue 👋</p>
+      </div>
+
+      <!-- MENU -->
+      <div class="mt-6 px-6 space-y-4">
+        <a
+          href="profil.html"
+          class="flex items-center space-x-3 p-3 rounded-xl bg-melon text-black hover:bg-melon/80"
+        >
+          <i class="fa-regular fa-id-card text-xl"></i>
+          <span class="text-lg">Voir Profil</span>
+        </a>
+
+        <a
+          href="favoris.html"
+          class="flex items-center space-x-3 p-3 rounded-xl bg-melon text-black hover:bg-melon/80"
+        >
+          <i class="fa-regular fa-heart text-xl"></i>
+          <span class="text-lg">Mes Favoris</span>
+        </a>
+
+        <a
+          href="statistiques.html"
+          class="flex items-center space-x-3 p-3 rounded-xl bg-melon text-black hover:bg-melon/80"
+        >
+          <i class="fa-solid fa-chart-line text-xl"></i>
+          <span class="text-lg">Mes Statistiques</span>
+        </a>
+      </div>
+
+      <!-- BOUTON FERMER -->
+      <button
+        id="closeSidebar"
+        class="absolute top-4 left-4 text-2xl text-white hover:text-melon transition"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- BACKDROP -->
+    <div id="sidebarBackdrop" class="fixed inset-0 bg-black/50 hidden z-40"></div>
 
     <button 
   onclick="history.back()" 
@@ -107,7 +219,50 @@
 
 
     <!-- FOOTER -->
-    <div id="footerContainer"></div>
+    <footer class="bg-byzantium37 p-2 text-black">
+      <div class="container mx-auto px-5">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <!-- Copyright -->
+          <div class="font-body text-lg mb-4 md:mb-0">
+            © 2025 EventMakers. Tous droits réservés.
+          </div>
+
+          <!-- Liens -->
+          <div class="flex items-center space-x-6 mb-4 md:mb-0">
+            <a href="contact.html" class="font-body text-lg hover:text-nonPhotoBlue transition-colors">
+              Contact
+            </a>
+            <a href="apropos.html#questionSection" class="font-body text-lg hover:text-nonPhotoBlue transition-colors">
+              Aide
+            </a>
+          </div>
+
+          <!-- Réseaux sociaux -->
+          <div class="flex items-center space-x-4">
+            <!-- Twitter -->
+            <a href="https://twitter.com" target="_blank"
+               class="w-10 h-10 rounded-full flex items-center justify-center"
+               style="background-color:#1DA1F2;">
+              <i class="fab fa-twitter text-white text-xl"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank"
+               class="w-10 h-10 rounded-full flex items-center justify-center"
+               style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);">
+              <i class="fab fa-instagram text-white text-xl"></i>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank"
+               class="w-10 h-10 rounded-full flex items-center justify-center"
+               style="background-color:#1877F2;">
+              <i class="fab fa-facebook-f text-white text-xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script>
       function initSidebar() {
@@ -134,18 +289,7 @@
         };
       }
 
-      fetch("./header.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("headerContainer").innerHTML = data;
-          initSidebar();
-        });
-
-      fetch("./footer.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("footerContainer").innerHTML = data;
-        });
+      document.addEventListener("DOMContentLoaded", initSidebar);
 
       // Initialize Pie Chart
       const pieCtx = document.getElementById('pieChart').getContext('2d');

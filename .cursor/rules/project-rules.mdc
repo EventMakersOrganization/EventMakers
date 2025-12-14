@@ -1,0 +1,28 @@
+---
+alwaysApply: true
+---
+# Project Rules
+
+## Tech Stack
+- This is a Tailwind CSS project
+- Always use Tailwind utility classes for styling
+- Never write custom CSS unless absolutely necessary
+
+## Tailwind Configuration
+- **CRITICAL**: Always follow the Tailwind configuration defined in `tailwind.config.js` or `tailwind.config.ts`
+- Respect custom colors, spacing, fonts, and breakpoints defined in the config
+- Use theme extensions and custom utilities as configured
+- Reference the config file when unsure about available utility classes
+
+## Styling Guidelines
+- Use Tailwind's utility-first approach
+- Compose complex styles using multiple utility classes
+- Leverage Tailwind's responsive modifiers (sm:, md:, lg:, xl:, 2xl:)
+- Use Tailwind's state modifiers (hover:, focus:, active:, etc.)
+- Prefer Tailwind utilities over inline styles or custom CSS
+
+## What to Avoid
+- Don't use arbitrary values like `w-[123px]` if a standard utility exists
+- Don't write custom CSS classes unless extending Tailwind in the config
+- Don't use CSS-in-JS solutions that conflict with Tailwind
+- Don't override Tailwind utilities with inline styles
