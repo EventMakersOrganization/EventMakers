@@ -1,5 +1,6 @@
 
-🎉 EventMakers
+🎉 EventMakers: 
+
 Une plateforme moderne et intuitive pour découvrir, organiser et suivre les événements universitaires.
 
 
