@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filtrer les Événements - Event Makers</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-soft">
+    <!-- HEADER -->
+    <div id="headerContainer"></div>
+
+     <button 
+  onclick="history.back()" 
+  class="mt-5 ml-5 text-3xl text-byzantium block w-fit"
+>
+  <i class="fa-solid fa-arrow-left"></i>
+</button>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mx-auto px-5 py-4">
+      <!-- FILTER FORM -->
+      <section class="container mx-auto px-5 mt-10 mb-20">
+  <div class="bg-rosé p-6 rounded-3xl shadow-lg border border-melon mx-4 md:mx-16">
+
+          <!-- Header with back button -->
+          <div class="flex items-center justify-between mb-4">
+          
+            <div class="flex items-center gap-2 flex-1 justify-center">
+              <h1 class="font-title text-2xl font-bold text-black">
+                Filtrer les Evenements
+              </h1>
+              <!-- Badge compteur -->
+              <span id="filterCount" class="bg-byzantium text-white font-body text-xs px-2 py-0.5 rounded-full hidden">0 actifs</span>
+            </div>
+            <div class="w-8"></div>
+          </div>
+
+          <form class="space-y-4">
+            <!-- STATUT -->
+            <div class="flex items-center gap-3">
+              <label class="font-title text-xs font-semibold text-black w-16">
+                Statut:
+              </label>
+              <div class="flex-1">
+                <div class="flex items-center justify-between mb-1">
+                  <button 
+                    type="button" 
+                    onclick="toggleAllStatut()"
+                    class="font-body text-xs text-byzantium hover:underline">
+                    Tout sélectionner
+                  </button>
+                </div>
+                <div class="flex gap-4 flex-wrap">
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="statut"
+                    value="avenir"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
+                  />
+                  <span class="font-body text-xs text-black">À venir</span>
+                </label>
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="statut"
+                    value="passe"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
+                  />
+                  <span class="font-body text-xs text-black">Passé</span>
+                </label>
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="statut"
+                    value="encours"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
+                  />
+                  <span class="font-body text-xs text-black">En cours</span>
+                </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- TYPE -->
+            <div class="flex items-start gap-3">
+              <label class="font-title text-xs font-semibold text-black w-16 pt-0.5">
+                Type:
+              </label>
+              <div class="flex-1">
+                <div class="flex items-center justify-between mb-1">
+                  <button 
+                    type="button" 
+                    onclick="toggleAllType()"
+                    class="font-body text-xs text-byzantium hover:underline">
+                    Tout sélectionner
+                  </button>
+                </div>
+                <div class="flex gap-4 flex-wrap">
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="type"
+                    value="conference"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
+                  />
+                  <span class="font-body text-xs text-black">Conférence</span>
+                </label>
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="type"
+                    value="concert"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
+                  />
+                  <span class="font-body text-xs text-black">Concert</span>
+                </label>
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="type"
+                    value="sport"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
+                  />
+                  <span class="font-body text-xs text-black">Sport</span>
+                </label>
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="type"
+                    value="atelier"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
+                  />
+                  <span class="font-body text-xs text-black">Atelier</span>
+                </label>
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="type"
+                    value="expositions"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
+                  />
+                  <span class="font-body text-xs text-black">Expositions</span>
+                </label>
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="type"
+                    value="hackathon"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
+                  />
+                  <span class="font-body text-xs text-black">Hackathon</span>
+                </label>
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="type"
+                    value="social"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
+                  />
+                  <span class="font-body text-xs text-black">Social & Culturel</span>
+                </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- PRÉVISUALISATION DES RÉSULTATS -->
+            <div class="bg-white border-2 border-melon rounded-2xl p-2.5 w-1/2 mx-auto">
+  <div class="flex items-center justify-between">
+    <span class="font-body text-xs text-black">Résultats trouvés:</span>
+    <span class="font-title text-base font-bold text-byzantium" id="resultCount">42 événements</span>
+  </div>
+</div>
+
+
+            <!-- DATES -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Date De Début -->
+              <div>
+                <label
+                  for="dateDebut"
+                  class="font-title text-xs font-semibold text-black mb-1.5 block"
+                >
+                  Date De Début:
+                </label>
+                <input
+                  type="date"
+                  id="dateDebut"
+                  class="w-full px-3 py-1.5 rounded-full border-2 border-melon bg-white font-body text-xs text-black focus:outline-none focus:border-byzantium"
+                />
+              </div>
+
+              <!-- Date De Fin -->
+              <div>
+                <label
+                  for="dateFin"
+                  class="font-title text-xs font-semibold text-black mb-1.5 block"
+                >
+                  Date De Fin:
+                </label>
+                <input
+                  type="date"
+                  id="dateFin"
+                  class="w-full px-3 py-1.5 rounded-full border-2 border-melon bg-white font-body text-xs text-black focus:outline-none focus:border-byzantium"
+                />
+              </div>
+            </div>
+
+            <!-- LIEU -->
+          
+<div class="w-1/2 mx-auto">
+  <label
+    for="lieu"
+    class="font-title text-xs font-semibold text-black mb-1.5 block"
+  >
+    Lieu:
+  </label>
+
+  <div class="relative">
+    <select
+      id="lieu"
+      class="w-full px-3 py-1.5 rounded-full border-2 border-melon bg-xanthous 
+             font-body text-xs text-black focus:outline-none focus:border-byzantium 
+             appearance-none cursor-pointer"
+    >
+      <option value="">Sélectionner un lieu</option>
+      <option value="blocG">Bloc G</option>
+      <option value="amphiCentral">Amphi central</option>
+      <option value="blocA">Bloc A</option>
+      <option value="blocB">Bloc B</option>
+      <option value="terrainSport">Terrain de sport</option>
+      <option value="cafeteria">Cafétéria</option>
+    </select>
+
+    <i
+      class="fas fa-chevron-down absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-black pointer-events-none"
+    ></i>
+  </div>
+</div>
+
+
+            <!-- HEURES -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Heure De Début -->
+              <div>
+                <label
+                  for="heureDebut"
+                  class="font-title text-xs font-semibold text-black mb-1.5 block"
+                >
+                  Heure De Début:
+                </label>
+                <input
+                  type="time"
+                  id="heureDebut"
+                  class="w-full px-3 py-1.5 rounded-full border-2 border-melon bg-white font-body text-xs text-black focus:outline-none focus:border-byzantium"
+                />
+              </div>
+
+              <!-- Heure De Fin -->
+              <div>
+                <label
+                  for="heureFin"
+                  class="font-title text-xs font-semibold text-black mb-1.5 block"
+                >
+                  Heure De Fin:
+                </label>
+                <input
+                  type="time"
+                  id="heureFin"
+                  class="w-full px-3 py-1.5 rounded-full border-2 border-melon bg-white font-body text-xs text-black focus:outline-none focus:border-byzantium"
+                />
+              </div>
+            </div>
+
+            <!-- PAR CLUB -->
+            <div class="flex items-center gap-3">
+              <label class="font-title text-xs font-semibold text-black w-16">
+                Par Club:
+              </label>
+              <div class="flex-1">
+                <div class="flex items-center justify-between mb-1">
+                  <button 
+                    type="button" 
+                    onclick="toggleAllClub()"
+                    class="font-body text-xs text-byzantium hover:underline">
+                    Tout sélectionner
+                  </button>
+                </div>
+                <div class="flex gap-4 flex-wrap">
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="club"
+                    value="gdsc"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
+                  />
+                  <span class="font-body text-xs text-black">GDSC</span>
+                </label>
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="club"
+                    value="enactus"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
+                  />
+                  <span class="font-body text-xs text-black">Enactus</span>
+                </label>
+                <label class="flex items-center gap-1.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="club"
+                    value="ieee"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
+                  />
+                  <span class="font-body text-xs text-black">IEEE</span>
+                </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="flex justify-center gap-3 pt-2">
+              <button
+                type="submit"
+                class="bg-byzantium text-white font-title text-xs font-semibold px-10 py-2 rounded-full hover:bg-opacity-90 transition-all shadow-lg"
+              >
+                Appliquer Filtres
+              </button>
+              <button
+                type="reset"
+                class="bg-melon text-black font-title text-xs font-semibold px-10 py-2 rounded-full hover:bg-opacity-90 transition-all shadow-lg"
+              >
+                Réinitialiser
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footerContainer"></div>
+
+    <!-- Bouton Back to Top -->
+    <button 
+      id="backToTop"
+      onclick="scrollToTop()"
+      class="hidden fixed bottom-8 right-8 w-14 h-14 bg-byzantium text-white rounded-full shadow-lg hover:bg-opacity-90 transition-all z-50 flex items-center justify-center">
+      <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <!-- SCRIPTS -->
+    <script>
+      function initSidebar() {
+        const sidebar = document.getElementById("profileSidebar");
+        const backdrop = document.getElementById("sidebarBackdrop");
+        const openBtn = document.getElementById("openSidebar");
+        const closeBtn = document.getElementById("closeSidebar");
+
+        if (!sidebar || !backdrop || !openBtn || !closeBtn) return;
+
+        openBtn.onclick = () => {
+          sidebar.classList.remove("translate-x-full");
+          backdrop.classList.remove("hidden");
+        };
+
+        closeBtn.onclick = () => {
+          sidebar.classList.add("translate-x-full");
+          backdrop.classList.add("hidden");
+        };
+
+        backdrop.onclick = () => {
+          sidebar.classList.add("translate-x-full");
+          backdrop.classList.add("hidden");
+        };
+      }
+
+      // Fonction pour tout sélectionner/désélectionner les statuts
+      function toggleAllStatut() {
+        const checkboxes = document.querySelectorAll('input[name="statut"]');
+        const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+        checkboxes.forEach(cb => cb.checked = !allChecked);
+        updateFilterCount();
+      }
+
+      // Fonction pour tout sélectionner/désélectionner les types
+      function toggleAllType() {
+        const checkboxes = document.querySelectorAll('input[name="type"]');
+        const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+        checkboxes.forEach(cb => cb.checked = !allChecked);
+        updateFilterCount();
+      }
+
+      // Fonction pour tout sélectionner/désélectionner les clubs
+      function toggleAllClub() {
+        const checkboxes = document.querySelectorAll('input[name="club"]');
+        const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+        checkboxes.forEach(cb => cb.checked = !allChecked);
+        updateFilterCount();
+      }
+
+      // Mettre à jour le compteur de filtres actifs
+      function updateFilterCount() {
+        const allCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        const count = allCheckboxes.length;
+        const badge = document.getElementById('filterCount');
+        
+        if (count > 0) {
+          badge.textContent = `${count} actif${count > 1 ? 's' : ''}`;
+          badge.classList.remove('hidden');
+        } else {
+          badge.classList.add('hidden');
+        }
+        
+        // Mettre à jour le nombre de résultats
+        updateResultCount();
+      }
+
+      // Mettre à jour le comptage des résultats
+      function updateResultCount() {
+        // Récupérer tous les filtres actifs
+        const statutChecked = document.querySelectorAll('input[name="statut"]:checked').length;
+        const typeChecked = document.querySelectorAll('input[name="type"]:checked').length;
+        const clubChecked = document.querySelectorAll('input[name="club"]:checked').length;
+        const lieu = document.getElementById('lieu').value;
+        const dateDebut = document.getElementById('dateDebut').value;
+        const dateFin = document.getElementById('dateFin').value;
+        
+        // Simulation : Plus de filtres = moins de résultats
+        let baseCount = 42; // Nombre total d'événements
+        
+        if (statutChecked > 0) baseCount -= Math.floor(Math.random() * 10);
+        if (typeChecked > 0) baseCount -= Math.floor(Math.random() * 8);
+        if (clubChecked > 0) baseCount -= Math.floor(Math.random() * 5);
+        if (lieu) baseCount -= Math.floor(Math.random() * 7);
+        if (dateDebut || dateFin) baseCount -= Math.floor(Math.random() * 6);
+        
+        // S'assurer qu'on a au moins 0 résultats
+        baseCount = Math.max(0, baseCount);
+        
+        // Mettre à jour l'affichage
+        const resultCountElement = document.getElementById('resultCount');
+        resultCountElement.textContent = `${baseCount} événement${baseCount > 1 ? 's' : ''}`;
+        
+        // Changer la couleur si aucun résultat
+        if (baseCount === 0) {
+          resultCountElement.classList.add('text-red-600');
+          resultCountElement.classList.remove('text-byzantium');
+        } else {
+          resultCountElement.classList.add('text-byzantium');
+          resultCountElement.classList.remove('text-red-600');
+        }
+      }
+
+      // Écouter les changements sur les checkboxes et autres champs
+      document.addEventListener('DOMContentLoaded', () => {
+        // Checkboxes
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+          checkbox.addEventListener('change', updateFilterCount);
+        });
+        
+        // Autres champs du formulaire
+        document.getElementById('lieu').addEventListener('change', updateResultCount);
+        document.getElementById('dateDebut').addEventListener('change', updateResultCount);
+        document.getElementById('dateFin').addEventListener('change', updateResultCount);
+        document.getElementById('heureDebut').addEventListener('change', updateResultCount);
+        document.getElementById('heureFin').addEventListener('change', updateResultCount);
+        
+        // Bouton reset
+        const resetBtn = document.querySelector('button[type="reset"]');
+        if (resetBtn) {
+          resetBtn.addEventListener('click', () => {
+            setTimeout(() => {
+              updateFilterCount();
+              updateResultCount();
+            }, 100);
+          });
+        }
+      });
+
+      // Back to Top
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Afficher/masquer le bouton Back to Top
+      window.addEventListener('scroll', () => {
+        const backToTop = document.getElementById('backToTop');
+        if (window.scrollY > 300) {
+          backToTop.classList.remove('hidden');
+          backToTop.classList.add('flex');
+        } else {
+          backToTop.classList.add('hidden');
+          backToTop.classList.remove('flex');
+        }
+      });
+
+      // 👉 Attendre que le header soit chargé
+      fetch("./header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("headerContainer").innerHTML = data;
+          initSidebar(); // 🔥 maintenant le script trouve les boutons !
+        });
+
+      fetch("./footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footerContainer").innerHTML = data;
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Détails Utilisateur - Event Makers</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gradient-to-br from-soft via-soft to-melon/20">
+    <!-- HEADER -->
+    <div id="headerContainer"></div>
+
+     <button 
+  onclick="history.back()" 
+  class="mt-5 ml-5 text-3xl text-byzantium block w-fit"
+>
+  <i class="fa-solid fa-arrow-left"></i>
+</button>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mx-auto px-5 py-4">
+      <!-- USER DETAILS CONTAINER -->
+      <section class="container mx-auto px-5 mt-10 mb-20">
+  <div class="bg-rosé backdrop-blur-sm p-6 rounded-3xl shadow-lg border border-melon mx-4 md:mx-16">
+
+         
+
+          <!-- Profile Section -->
+          <div class="flex flex-col items-center">
+            <!-- Profile Image -->
+            <div class="w-32 h-32 rounded-full border-4 border-melon overflow-hidden mb-4 shadow-lg">
+              <img
+                src="../images/zeineb.png"
+                alt="Zeineb Ghezaiel"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <!-- User Name -->
+            <h2 class="font-title text-lg font-semibold text-black mb-3">
+              Zeineb Ghezaiel
+            </h2>
+
+            <!-- Action Icons -->
+            <div class="flex items-center gap-3 mb-4">
+              <button class="w-9 h-9 rounded-full hover:bg-melon transition-all flex items-center justify-center">
+                <i class="fas fa-phone text-black text-base"></i>
+              </button>
+              <button class="w-9 h-9 rounded-full hover:bg-melon transition-all flex items-center justify-center">
+                <i class="fas fa-bell text-black text-base"></i>
+              </button>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="w-full  mx-auto space-y-2.5">
+              <!-- Envoyer un message (principal) -->
+             <a href="chatter.html"
+   class="w-1/2 mx-auto bg-melon hover:bg-opacity-90 transition-all rounded-full
+          py-2.5 px-5 flex items-center justify-center gap-2.5 border-2 border-black shadow-lg">
+    <i class="fas fa-comment-dots text-black text-base"></i>
+    <span class="font-body text-xs font-semibold text-black">Envoyer un message</span>
+</a>
+
+
+             <!-- Bouton Suivre -->
+<button
+  id="followBtn"
+  onclick="toggleFollow()"
+  class="w-1/2 mx-auto bg-white hover:bg-byzantium hover:text-white transition-all rounded-full py-2.5 px-5 flex items-center justify-center gap-2.5 border-2 border-byzantium">
+  <i class="fas fa-user-plus text-byzantium" id="followIcon"></i>
+  <span class="font-body text-xs text-byzantium" id="followText">Suivre</span>
+</button>
+
+<!-- Créer groupe -->
+<button class="w-1/2 mx-auto bg-xanthous hover:bg-opacity-90 transition-all rounded-full py-2.5 px-5 flex items-center justify-center gap-2.5 border-2 border-melon">
+  <i class="fas fa-user-friends text-black text-base"></i>
+  <span class="font-body text-xs text-black">Créer groupe</span>
+</button>
+
+<!-- Voir images -->
+<button onclick="openGalleryModal()" class="w-1/2 mx-auto bg-xanthous hover:bg-opacity-90 transition-all rounded-full py-2.5 px-5 flex items-center justify-center gap-2.5 border-2 border-melon">
+  <i class="fas fa-images text-black text-base"></i>
+  <span class="font-body text-xs text-black">Voir images (12)</span>
+</button>
+
+<!-- Partager le profil -->
+<button onclick="openShareModal()" class="w-1/2 mx-auto bg-xanthous hover:bg-opacity-90 transition-all rounded-full py-2.5 px-5 flex items-center justify-center gap-2.5 border-2 border-melon">
+  <i class="fas fa-share-alt text-black text-base"></i>
+  <span class="font-body text-xs text-black">Partager le profil</span>
+</button>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footerContainer"></div>
+
+    <!-- MODAL : Partage de profil -->
+    <div id="shareModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div class="bg-white rounded-3xl p-8 max-w-md w-full mx-4">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="font-title text-h3 font-semibold text-black">Partager le profil</h3>
+          <button onclick="closeShareModal()" class="text-gray-500 hover:text-black">
+            <i class="fas fa-times text-2xl"></i>
+          </button>
+        </div>
+        <div class="space-y-4">
+          <button class="w-full bg-blue-600 text-white rounded-full py-3 flex items-center justify-center gap-3 hover:bg-blue-700 transition-all">
+            <i class="fab fa-facebook-f"></i>
+            <span>Partager sur Facebook</span>
+          </button>
+          <button class="w-full bg-blue-400 text-white rounded-full py-3 flex items-center justify-center gap-3 hover:bg-blue-500 transition-all">
+            <i class="fab fa-twitter"></i>
+            <span>Partager sur Twitter</span>
+          </button>
+          <button class="w-full bg-green-600 text-white rounded-full py-3 flex items-center justify-center gap-3 hover:bg-green-700 transition-all">
+            <i class="fab fa-whatsapp"></i>
+            <span>Partager sur WhatsApp</span>
+          </button>
+          <button onclick="copyProfileLink()" class="w-full bg-gray-200 text-black rounded-full py-3 flex items-center justify-center gap-3 hover:bg-gray-300 transition-all">
+            <i class="fas fa-link"></i>
+            <span>Copier le lien</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL : Galerie d'images -->
+    <div id="galleryModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div class="bg-white rounded-3xl p-8 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="font-title text-h3 font-semibold text-black">Galerie photos</h3>
+          <button onclick="closeGalleryModal()" class="text-gray-500 hover:text-black">
+            <i class="fas fa-times text-2xl"></i>
+          </button>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <img src="../images/hero.png" alt="Photo" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-all">
+          <img src="../images/cybersecurity.jpg" alt="Photo" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-all">
+          <img src="../images/hightech.jpg" alt="Photo" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-all">
+          <img src="../images/intégration.jpg" alt="Photo" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-all">
+          <img src="../images/movienight.jpg" alt="Photo" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-all">
+          <img src="../images/popnight.jpg" alt="Photo" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-all">
+          <img src="../images/reacttail.jpg" alt="Photo" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-all">
+          <img src="../images/cybersecurity.jpg" alt="Photo" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-all">
+          <img src="../images/hightech.jpg" alt="Photo" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-all">
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="hidden fixed top-5 right-5 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg z-50 flex items-center gap-3">
+      <i class="fas fa-check-circle text-2xl"></i>
+      <span id="toastMessage" class="font-body text-p"></span>
+    </div>
+
+    <!-- Bouton Back to Top -->
+    <button 
+      id="backToTop"
+      onclick="scrollToTop()"
+      class="hidden fixed bottom-8 right-8 w-14 h-14 bg-byzantium text-white rounded-full shadow-lg hover:bg-opacity-90 transition-all z-50 flex items-center justify-center">
+      <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <!-- SCRIPTS -->
+    <script>
+      function initSidebar() {
+        const sidebar = document.getElementById("profileSidebar");
+        const backdrop = document.getElementById("sidebarBackdrop");
+        const openBtn = document.getElementById("openSidebar");
+        const closeBtn = document.getElementById("closeSidebar");
+
+        if (!sidebar || !backdrop || !openBtn || !closeBtn) return;
+
+        openBtn.onclick = () => {
+          sidebar.classList.remove("translate-x-full");
+          backdrop.classList.remove("hidden");
+        };
+
+        closeBtn.onclick = () => {
+          sidebar.classList.add("translate-x-full");
+          backdrop.classList.add("hidden");
+        };
+
+        backdrop.onclick = () => {
+          sidebar.classList.add("translate-x-full");
+          backdrop.classList.add("hidden");
+        };
+      }
+
+      // Toggle Suivre/Suivi
+      let isFollowing = false;
+      function toggleFollow() {
+        isFollowing = !isFollowing;
+        const btn = document.getElementById('followBtn');
+        const icon = document.getElementById('followIcon');
+        const text = document.getElementById('followText');
+        
+        if (isFollowing) {
+          btn.classList.add('bg-byzantium');
+          btn.classList.remove('bg-white', 'hover:bg-byzantium');
+          icon.classList.remove('fa-user-plus', 'text-byzantium');
+          icon.classList.add('fa-user-check', 'text-white');
+          text.classList.remove('text-byzantium');
+          text.classList.add('text-white');
+          text.textContent = 'Suivi';
+          showToast('Vous suivez maintenant Zeineb Ghezaiel');
+        } else {
+          btn.classList.remove('bg-byzantium');
+          btn.classList.add('bg-white', 'hover:bg-byzantium');
+          icon.classList.add('fa-user-plus', 'text-byzantium');
+          icon.classList.remove('fa-user-check', 'text-white');
+          text.classList.add('text-byzantium');
+          text.classList.remove('text-white');
+          text.textContent = 'Suivre';
+          showToast('Vous ne suivez plus Zeineb Ghezaiel');
+        }
+      }
+
+      // Modal de partage
+      function openShareModal() {
+        document.getElementById('shareModal').classList.remove('hidden');
+      }
+
+      function closeShareModal() {
+        document.getElementById('shareModal').classList.add('hidden');
+      }
+
+      function copyProfileLink() {
+        const link = window.location.href;
+        navigator.clipboard.writeText(link).then(() => {
+          showToast('Lien copié dans le presse-papiers !');
+          closeShareModal();
+        });
+      }
+
+      // Modal galerie
+      function openGalleryModal() {
+        document.getElementById('galleryModal').classList.remove('hidden');
+      }
+
+      function closeGalleryModal() {
+        document.getElementById('galleryModal').classList.add('hidden');
+      }
+
+      // Toast notification
+      function showToast(message) {
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+        toastMessage.textContent = message;
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 3000);
+      }
+
+      // Back to Top
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Afficher/masquer le bouton Back to Top
+      window.addEventListener('scroll', () => {
+        const backToTop = document.getElementById('backToTop');
+        if (window.scrollY > 300) {
+          backToTop.classList.remove('hidden');
+          backToTop.classList.add('flex');
+        } else {
+          backToTop.classList.add('hidden');
+          backToTop.classList.remove('flex');
+        }
+      });
+
+      // Fermer les modals en cliquant à l'extérieur
+      document.getElementById('shareModal')?.addEventListener('click', (e) => {
+        if (e.target.id === 'shareModal') closeShareModal();
+      });
+
+      document.getElementById('galleryModal')?.addEventListener('click', (e) => {
+        if (e.target.id === 'galleryModal') closeGalleryModal();
+      });
+
+      // 👉 Attendre que le header soit chargé
+      fetch("./header.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("headerContainer").innerHTML = data;
+          initSidebar();
+        });
+
+      fetch("./footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footerContainer").innerHTML = data;
+        });
+    </script>
+  </body>
+</html>
