@@ -31,7 +31,7 @@ Zeineb Ghezaeil – Pages :
 
 Abir Ben Brahem – Pages :
 ![liste des messages ](screenshots/listemess.png)
-![creation avec evenement similaire  ](screenshots/createeventsim.png)
+![creation avec evenement similaire  ](screenshots/createventsim.png)
 ![details event  ](screenshots/eventdetails.png)
 ![liste user active   ](screenshots/active.png)
 
@@ -41,7 +41,7 @@ Jacem Guesmi– Pages :
 ![nouveau message   ](screenshots/nouvmess.png)
 ![s'inscrire    ](screenshots/signup.png)
 ![se connecter   ](screenshots/login.png)
-![créer event   ](screenshots/createvent.png)
+![créer event   ](screenshots/createevent.png)
 
 
 Oussema Bani – Pages : 
