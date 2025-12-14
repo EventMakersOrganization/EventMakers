@@ -14,18 +14,43 @@ Une plateforme moderne et intuitive pour découvrir, organiser et suivre les év
 👩‍💻 Membres :
 
 Kmar Ben Mbarek– Pages :
+![Page d'accueil](screenshots/accueil1.png)
+![suite Page d'accueil](screenshots/accueil2.png)
+![map](screenshots/map.png)
+![calendrier](screenshots/calendrier.png)
+![favoris](screenshots/favorite.png)
 
 
 Zeineb Ghezaeil – Pages :
+![filtrer evenements](screenshots/filtrage.png)
+![chatter](screenshots/chatt.png)
+![details user](screenshots/detailuser.png)
+![a propos](screenshots/apropos1.png)
+![a propos suite](screenshots/apropos2.png)
 
 
 Abir Ben Brahem – Pages :
+![liste des messages ](screenshots/listemess.png)
+![creation avec evenement similaire  ](screenshots/createeventsim.png)
+![details event  ](screenshots/eventdetails.png)
+![liste user active   ](screenshots/active.png)
 
 
 Jacem Guesmi– Pages : 
+![reunion club info    ](screenshots/reunion.png)
+![nouveau message   ](screenshots/nouvmess.png)
+![s'inscrire    ](screenshots/signup.png)
+![se connecter   ](screenshots/login.png)
+![créer event   ](screenshots/createvent.png)
 
 
 Oussema Bani – Pages : 
+![statistiques   ](screenshots/stats.png)
+![envoyer image   ](screenshots/addimage.png)
+![create new event  ](screenshots/createeventform.png)
+![paramétres   ](screenshots/parametres.png)
+![paramétres   ](screenshots/parametres.png)
+![mes evenements   ](screenshots/myevents.png)
 
 
 
