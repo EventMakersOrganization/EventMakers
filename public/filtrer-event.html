@@ -19,213 +19,209 @@
     <div id="headerContainer"></div>
 
     <!-- MAIN CONTENT -->
-    <main class="container mx-auto px-5 py-16">
+    <main class="container mx-auto px-5 py-4">
       <!-- FILTER FORM -->
-      <section class="max-w-6xl mx-auto">
-        <div class="bg-soft border-4 border-melon rounded-3xl p-12 shadow-lg">
+      <section class="max-w-3xl mx-auto">
+        <div class="bg-soft border-4 border-melon rounded-3xl p-6 shadow-lg">
           <!-- Header with back button -->
-          <div class="flex items-center justify-between mb-10">
+          <div class="flex items-center justify-between mb-4">
             <button
               onclick="window.history.back()"
-              class="w-12 h-12 rounded-full bg-soft border-2 border-melon flex items-center justify-center hover:bg-melon transition-all" aria-label="Retour">
-              <i class="fas fa-chevron-left text-black text-xl"></i>
+              class="w-8 h-8 rounded-full bg-soft border-2 border-melon flex items-center justify-center hover:bg-melon transition-all" aria-label="Retour">
+              <i class="fas fa-chevron-left text-black text-sm"></i>
             </button>
-            <div class="flex items-center gap-4 flex-1 justify-center">
-              <h1 class="font-title text-h1 font-bold text-black">
+            <div class="flex items-center gap-2 flex-1 justify-center">
+              <h1 class="font-title text-2xl font-bold text-black">
                 Filtrer les Evenements
               </h1>
               <!-- Badge compteur -->
-              <span id="filterCount" class="bg-byzantium text-white font-body text-sm px-3 py-1 rounded-full hidden">0 actifs</span>
+              <span id="filterCount" class="bg-byzantium text-white font-body text-xs px-2 py-0.5 rounded-full hidden">0 actifs</span>
             </div>
-            <div class="w-12"></div>
+            <div class="w-8"></div>
           </div>
 
-          <form class="space-y-10">
+          <form class="space-y-4">
             <!-- STATUT -->
-            <div class="flex items-center gap-8">
-              <label class="font-title text-button font-medium text-black w-40">
+            <div class="flex items-center gap-3">
+              <label class="font-title text-xs font-semibold text-black w-16">
                 Statut:
               </label>
               <div class="flex-1">
-                <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center justify-between mb-1">
                   <button 
                     type="button" 
                     onclick="toggleAllStatut()"
-                    class="font-body text-sm text-byzantium hover:underline">
+                    class="font-body text-xs text-byzantium hover:underline">
                     Tout sélectionner
                   </button>
                 </div>
-                <div class="flex gap-6 flex-wrap">
-                <label class="flex items-center gap-3 cursor-pointer">
+                <div class="flex gap-4 flex-wrap">
+                <label class="flex items-center gap-1.5 cursor-pointer">
                   <input
                     type="checkbox"
                     name="statut"
                     value="avenir"
-                    class="w-6 h-6 rounded border-2 border-xanthous accent-xanthous"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
                   />
-                  <span class="font-body text-p text-black">À venir</span>
+                  <span class="font-body text-xs text-black">À venir</span>
                 </label>
-                <label class="flex items-center gap-3 cursor-pointer">
+                <label class="flex items-center gap-1.5 cursor-pointer">
                   <input
                     type="checkbox"
                     name="statut"
                     value="passe"
-                    class="w-6 h-6 rounded border-2 border-xanthous accent-xanthous"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
                   />
-                  <span class="font-body text-p text-black">Passé</span>
+                  <span class="font-body text-xs text-black">Passé</span>
                 </label>
-                <label class="flex items-center gap-3 cursor-pointer">
+                <label class="flex items-center gap-1.5 cursor-pointer">
                   <input
                     type="checkbox"
                     name="statut"
                     value="encours"
-                    class="w-6 h-6 rounded border-2 border-xanthous accent-xanthous"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
                   />
-                  <span class="font-body text-p text-black">En cours</span>
+                  <span class="font-body text-xs text-black">En cours</span>
                 </label>
                 </div>
               </div>
             </div>
 
             <!-- TYPE -->
-            <div class="flex items-start gap-8">
-              <label class="font-title text-button font-medium text-black w-40 pt-1">
+            <div class="flex items-start gap-3">
+              <label class="font-title text-xs font-semibold text-black w-16 pt-0.5">
                 Type:
               </label>
               <div class="flex-1">
-                <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center justify-between mb-1">
                   <button 
                     type="button" 
                     onclick="toggleAllType()"
-                    class="font-body text-sm text-byzantium hover:underline">
+                    class="font-body text-xs text-byzantium hover:underline">
                     Tout sélectionner
                   </button>
                 </div>
-                <div class="flex gap-6 flex-wrap">
-                <label class="flex items-center gap-3 cursor-pointer">
+                <div class="flex gap-4 flex-wrap">
+                <label class="flex items-center gap-1.5 cursor-pointer">
                   <input
                     type="checkbox"
                     name="type"
                     value="conference"
-                    class="w-6 h-6 rounded border-2 border-xanthous accent-xanthous"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
                   />
-                  <span class="font-body text-p text-black">Conférence</span>
+                  <span class="font-body text-xs text-black">Conférence</span>
                 </label>
-                <label class="flex items-center gap-3 cursor-pointer">
+                <label class="flex items-center gap-1.5 cursor-pointer">
                   <input
                     type="checkbox"
                     name="type"
                     value="concert"
-                    class="w-6 h-6 rounded border-2 border-xanthous accent-xanthous"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
                   />
-                  <span class="font-body text-p text-black">Concert</span>
+                  <span class="font-body text-xs text-black">Concert</span>
                 </label>
-                <label class="flex items-center gap-3 cursor-pointer">
+                <label class="flex items-center gap-1.5 cursor-pointer">
                   <input
                     type="checkbox"
                     name="type"
                     value="sport"
-                    class="w-6 h-6 rounded border-2 border-xanthous accent-xanthous"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
                   />
-                  <span class="font-body text-p text-black">Sport</span>
+                  <span class="font-body text-xs text-black">Sport</span>
                 </label>
-                <label class="flex items-center gap-3 cursor-pointer">
+                <label class="flex items-center gap-1.5 cursor-pointer">
                   <input
                     type="checkbox"
                     name="type"
                     value="atelier"
-                    class="w-6 h-6 rounded border-2 border-xanthous accent-xanthous"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
                   />
-                  <span class="font-body text-p text-black">Atelier</span>
+                  <span class="font-body text-xs text-black">Atelier</span>
                 </label>
-                <label class="flex items-center gap-3 cursor-pointer">
+                <label class="flex items-center gap-1.5 cursor-pointer">
                   <input
                     type="checkbox"
                     name="type"
                     value="expositions"
-                    class="w-6 h-6 rounded border-2 border-xanthous accent-xanthous"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
                   />
-                  <span class="font-body text-p text-black">Expositions</span>
+                  <span class="font-body text-xs text-black">Expositions</span>
                 </label>
-                <label class="flex items-center gap-3 cursor-pointer">
+                <label class="flex items-center gap-1.5 cursor-pointer">
                   <input
                     type="checkbox"
                     name="type"
                     value="hackathon"
-                    class="w-6 h-6 rounded border-2 border-xanthous accent-xanthous"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
                   />
-                  <span class="font-body text-p text-black">Hackathon</span>
+                  <span class="font-body text-xs text-black">Hackathon</span>
                 </label>
-                <label class="flex items-center gap-3 cursor-pointer">
+                <label class="flex items-center gap-1.5 cursor-pointer">
                   <input
                     type="checkbox"
                     name="type"
                     value="social"
-                    class="w-6 h-6 rounded border-2 border-xanthous accent-xanthous"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
                   />
-                  <span class="font-body text-p text-black">Social & Culturel</span>
+                  <span class="font-body text-xs text-black">Social & Culturel</span>
                 </label>
                 </div>
               </div>
             </div>
 
             <!-- PRÉVISUALISATION DES RÉSULTATS -->
-            <div class="bg-white border-2 border-melon rounded-2xl p-6">
+            <div class="bg-white border-2 border-melon rounded-2xl p-2.5">
               <div class="flex items-center justify-between">
-                <span class="font-body text-p text-black">Résultats trouvés:</span>
-                <span class="font-title text-h3 font-bold text-byzantium" id="resultCount">42 événements</span>
+                <span class="font-body text-xs text-black">Résultats trouvés:</span>
+                <span class="font-title text-base font-bold text-byzantium" id="resultCount">42 événements</span>
               </div>
             </div>
 
             <!-- DATES -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <!-- Date De Début -->
-              <div class="flex items-center gap-6">
+              <div>
                 <label
                   for="dateDebut"
-                  class="font-title text-button font-medium text-black w-48"
+                  class="font-title text-xs font-semibold text-black mb-1.5 block"
                 >
                   Date De Début:
                 </label>
-                <div class="relative flex-1">
-                  <input
-                    type="date"
-                    id="dateDebut"
-                    class="w-full px-6 py-3 rounded-full border-2 border-black bg-white font-body text-p text-black focus:outline-none focus:border-byzantium"
-                  />
-                </div>
+                <input
+                  type="date"
+                  id="dateDebut"
+                  class="w-full px-3 py-1.5 rounded-full border-2 border-black bg-white font-body text-xs text-black focus:outline-none focus:border-byzantium"
+                />
               </div>
 
               <!-- Date De Fin -->
-              <div class="flex items-center gap-6">
+              <div>
                 <label
                   for="dateFin"
-                  class="font-title text-button font-medium text-black w-40"
+                  class="font-title text-xs font-semibold text-black mb-1.5 block"
                 >
                   Date De Fin:
                 </label>
-                <div class="relative flex-1">
-                  <input
-                    type="date"
-                    id="dateFin"
-                    class="w-full px-6 py-3 rounded-full border-2 border-black bg-white font-body text-p text-black focus:outline-none focus:border-byzantium"
-                  />
-                </div>
+                <input
+                  type="date"
+                  id="dateFin"
+                  class="w-full px-3 py-1.5 rounded-full border-2 border-black bg-white font-body text-xs text-black focus:outline-none focus:border-byzantium"
+                />
               </div>
             </div>
 
             <!-- LIEU -->
-            <div class="flex items-center gap-8">
+            <div>
               <label
                 for="lieu"
-                class="font-title text-button font-medium text-black w-40"
+                class="font-title text-xs font-semibold text-black mb-1.5 block"
               >
                 Lieu:
               </label>
-              <div class="relative flex-1">
+              <div class="relative">
                 <select
                   id="lieu"
-                  class="w-full px-6 py-3 rounded-full border-2 border-black bg-xanthous font-body text-p text-black focus:outline-none focus:border-byzantium appearance-none cursor-pointer"
+                  class="w-full px-3 py-1.5 rounded-full border-2 border-black bg-xanthous font-body text-xs text-black focus:outline-none focus:border-byzantium appearance-none cursor-pointer"
                 >
                   <option value="">Sélectionner un lieu</option>
                   <option value="blocG">Bloc G</option>
@@ -236,105 +232,101 @@
                   <option value="cafeteria">Cafétéria</option>
                 </select>
                 <i
-                  class="fas fa-chevron-down absolute right-6 top-1/2 transform -translate-y-1/2 text-black pointer-events-none"
+                  class="fas fa-chevron-down absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-black pointer-events-none"
                 ></i>
               </div>
             </div>
 
             <!-- HEURES -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <!-- Heure De Début -->
-              <div class="flex items-center gap-6">
+              <div>
                 <label
                   for="heureDebut"
-                  class="font-title text-button font-medium text-black w-48"
+                  class="font-title text-xs font-semibold text-black mb-1.5 block"
                 >
                   Heure De Début:
                 </label>
-                <div class="relative flex-1">
-                  <input
-                    type="time"
-                    id="heureDebut"
-                    class="w-full px-6 py-3 rounded-full border-2 border-black bg-white font-body text-p text-black focus:outline-none focus:border-byzantium"
-                  />
-                </div>
+                <input
+                  type="time"
+                  id="heureDebut"
+                  class="w-full px-3 py-1.5 rounded-full border-2 border-black bg-white font-body text-xs text-black focus:outline-none focus:border-byzantium"
+                />
               </div>
 
               <!-- Heure De Fin -->
-              <div class="flex items-center gap-6">
+              <div>
                 <label
                   for="heureFin"
-                  class="font-title text-button font-medium text-black w-40"
+                  class="font-title text-xs font-semibold text-black mb-1.5 block"
                 >
                   Heure De Fin:
                 </label>
-                <div class="relative flex-1">
-                  <input
-                    type="time"
-                    id="heureFin"
-                    class="w-full px-6 py-3 rounded-full border-2 border-black bg-white font-body text-p text-black focus:outline-none focus:border-byzantium"
-                  />
-                </div>
+                <input
+                  type="time"
+                  id="heureFin"
+                  class="w-full px-3 py-1.5 rounded-full border-2 border-black bg-white font-body text-xs text-black focus:outline-none focus:border-byzantium"
+                />
               </div>
             </div>
 
             <!-- PAR CLUB -->
-            <div class="flex items-center gap-8">
-              <label class="font-title text-button font-medium text-black w-40">
+            <div class="flex items-center gap-3">
+              <label class="font-title text-xs font-semibold text-black w-16">
                 Par Club:
               </label>
               <div class="flex-1">
-                <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center justify-between mb-1">
                   <button 
                     type="button" 
                     onclick="toggleAllClub()"
-                    class="font-body text-sm text-byzantium hover:underline">
+                    class="font-body text-xs text-byzantium hover:underline">
                     Tout sélectionner
                   </button>
                 </div>
-                <div class="flex gap-6 flex-wrap">
-                <label class="flex items-center gap-3 cursor-pointer">
+                <div class="flex gap-4 flex-wrap">
+                <label class="flex items-center gap-1.5 cursor-pointer">
                   <input
                     type="checkbox"
                     name="club"
                     value="gdsc"
-                    class="w-6 h-6 rounded border-2 border-xanthous accent-xanthous"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
                   />
-                  <span class="font-body text-p text-black">GDSC</span>
+                  <span class="font-body text-xs text-black">GDSC</span>
                 </label>
-                <label class="flex items-center gap-3 cursor-pointer">
+                <label class="flex items-center gap-1.5 cursor-pointer">
                   <input
                     type="checkbox"
                     name="club"
                     value="enactus"
-                    class="w-6 h-6 rounded border-2 border-xanthous accent-xanthous"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
                   />
-                  <span class="font-body text-p text-black">Enactus</span>
+                  <span class="font-body text-xs text-black">Enactus</span>
                 </label>
-                <label class="flex items-center gap-3 cursor-pointer">
+                <label class="flex items-center gap-1.5 cursor-pointer">
                   <input
                     type="checkbox"
                     name="club"
                     value="ieee"
-                    class="w-6 h-6 rounded border-2 border-xanthous accent-xanthous"
+                    class="w-3.5 h-3.5 rounded border-2 border-xanthous accent-xanthous"
                   />
-                  <span class="font-body text-p text-black">IEEE</span>
+                  <span class="font-body text-xs text-black">IEEE</span>
                 </label>
                 </div>
               </div>
             </div>
 
             <!-- BUTTONS -->
-            <div class="flex justify-center gap-8 pt-6">
+            <div class="flex justify-center gap-3 pt-2">
               <button
                 type="submit"
-                class="bg-byzantium text-white font-title text-button font-medium px-16 py-4 rounded-full hover:bg-opacity-90 transition-all shadow-lg"
+                class="bg-byzantium text-white font-title text-xs font-semibold px-10 py-2 rounded-full hover:bg-opacity-90 transition-all shadow-lg"
               >
                 Appliquer Filtres
               </button>
               <button
                 type="reset"
-                class="bg-melon text-black font-title text-button font-medium px-16 py-4 rounded-full hover:bg-opacity-90 transition-all shadow-lg"
+                class="bg-melon text-black font-title text-xs font-semibold px-10 py-2 rounded-full hover:bg-opacity-90 transition-all shadow-lg"
               >
                 Réinitialiser
               </button>
