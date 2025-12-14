@@ -36,11 +36,13 @@
         </p>
 
         <div class="mt-8 flex gap-6">
-          <button
-            class="px-6 py-3 bg-byzantium text-white rounded-[35px] text-button font-medium font-title"
-          >
-            Explorer les événements
-          </button>
+         <button
+  onclick="document.getElementById('eventsSection').scrollIntoView({ behavior: 'smooth' });"
+  class="px-6 py-3 bg-byzantium text-white rounded-[35px] text-button font-medium font-title"
+>
+  Explorer les événements
+</button>
+
 
           <button
             class="px-6 py-3 bg-melon text-black rounded-[35px] text-button font-medium font-title"
@@ -58,27 +60,31 @@
     </section>
 
     <!-- SECTION EVENEMENTS -->
-    <section class="container mx-auto px-8 mt-12">
+    <section id="eventsSection" class="container mx-auto px-8 mt-12">
       <!-- Conteneur relatif pour titre et icônes -->
       <div class="relative flex justify-center items-center mb-2">
-        <!-- Icône de filtrage à gauche -->
-        <button
-          class="absolute left-16 text-byzantium text-2xl p-2 rounded-full hover:bg-cardbg transition"
-        >
-          <i class="fa-solid fa-filter"></i>
-        </button>
+       <!-- Icône de filtrage à gauche -->
+<button
+  class="absolute left-16 text-byzantium text-2xl p-2 rounded-full hover:bg-cardbg transition"
+  onclick="window.location.href='filtrer-event.html'"
+>
+  <i class="fa-solid fa-filter"></i>
+</button>
+
 
         <!-- Titre centré -->
         <h2 class="text-h2 font-title text-byzantium">
           Explorer Nos Événements
         </h2>
 
-        <!-- Icône de calendrier à droite -->
-        <button
-          class="absolute right-16 text-byzantium text-2xl p-2 rounded-full hover:bg-cardbg transition"
-        >
-          <i class="fa-regular fa-calendar"></i>
-        </button>
+       <!-- Icône de calendrier à droite -->
+<button
+  class="absolute right-16 text-byzantium text-2xl p-2 rounded-full hover:bg-cardbg transition"
+  onclick="window.location.href='calendrier.html'"
+>
+  <i class="fa-regular fa-calendar"></i>
+</button>
+
       </div>
       <p class="text-p mt-2 text-center">
         Ne manquez pas les activités organisées par les clubs.
@@ -87,7 +93,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 px-10 md:px-16">
         <!-- 🔹 CARD 1 -->
         <div
-          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+          class="event-card bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
         >
           <span
             class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
@@ -122,6 +128,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -130,13 +137,14 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
 
         <!-- 🔹 CARD 2 -->
         <div
-          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+          class="event-card bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
         >
           <span
             class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
@@ -169,6 +177,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -177,13 +186,14 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
 
         <!-- 🔹 CARD 3 -->
         <div
-          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+          class="event-card bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
         >
           <span
             class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
@@ -216,6 +226,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -224,13 +235,14 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
 
         <!-- 🔹 CARD 4 -->
         <div
-          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+          class="event-card bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
         >
           <span
             class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
@@ -263,6 +275,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -271,13 +284,14 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
 
         <!-- 🔹 CARD 5 -->
         <div
-          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+          class="event-card bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
         >
           <span
             class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
@@ -310,6 +324,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -318,13 +333,14 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
 
         <!-- 🔹 CARD 6 -->
         <div
-          class="bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
+          class="event-card bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative"
         >
           <span
             class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
@@ -357,6 +373,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -365,14 +382,333 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
+
+        <!-- 🔹 CARD 7 -->
+        <div
+          class="event-card bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative hidden"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+            >Atelier</span
+          >
+          <img
+            src="../images/angular.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">Atelier Angular</h3>
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 15/12/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Amphi central</span>
+          </p>
+          <!-- ICONES EN BAS A DROITE -->
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#8FD4F3'"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+              onclick="toggleHeart(this)"
+              onmouseover="this.style.color='#F9D5A7'"
+              onmouseout="this.style.color='#F7B194'"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
+            ></i>
+          </div>
+        </div>
+
+        <!-- 🔹 CARD 8 -->
+        <div
+          class=" event-card bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative hidden"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+            >Social & Culture</span
+          >
+          <img
+            src="../images/jazz.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">Jazz Night</h3>
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 28/12/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Bloc G</span>
+          </p>
+          <!-- ICONES EN BAS A DROITE -->
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#8FD4F3'"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+              onclick="toggleHeart(this)"
+              onmouseover="this.style.color='#F9D5A7'"
+              onmouseout="this.style.color='#F7B194'"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
+            ></i>
+          </div>
+        </div>
+
+        <!-- 🔹 CARD 9 -->
+        <div
+          class="event-card bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative hidden"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+            >Expositions</span
+          >
+          <img
+            src="../images/jobconnect.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">JobConnect Expo</h3>
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 13/12/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Amphi central</span>
+          </p>
+          <!-- ICONES EN BAS A DROITE -->
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#8FD4F3'"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+              onclick="toggleHeart(this)"
+              onmouseover="this.style.color='#F9D5A7'"
+              onmouseout="this.style.color='#F7B194'"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
+            ></i>
+          </div>
+        </div>
+
+        <!-- 🔹 CARD 10 -->
+        <div
+          class=" event-card bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative hidden"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+            >Sport</span
+          >
+          <img
+            src="../images/espritcup.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">Esprit Cup</h3>
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 18/12/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Bloc G</span>
+          </p>
+          <!-- ICONES EN BAS A DROITE -->
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#8FD4F3'"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+              onclick="toggleHeart(this)"
+              onmouseover="this.style.color='#F9D5A7'"
+              onmouseout="this.style.color='#F7B194'"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
+            ></i>
+          </div>
+        </div>
+
+         <!-- 🔹 CARD 11 -->
+        <div
+          class="event-card bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative hidden"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+            >Hackathon</span
+          >
+          <img
+            src="../images/Hackaton.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">TechNova Hackathon</h3>
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 24/12/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Amphi central</span>
+          </p>
+          <!-- ICONES EN BAS A DROITE -->
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#8FD4F3'"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+              onclick="toggleHeart(this)"
+              onmouseover="this.style.color='#F9D5A7'"
+              onmouseout="this.style.color='#F7B194'"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
+            ></i>
+          </div>
+        </div>
+
+        <!-- 🔹 CARD 12 -->
+        <div
+          class=" event-card bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative hidden"
+        >
+          <span
+            class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10"
+            >Atelier</span
+          >
+          <img
+            src="../images/Spring.jpg"
+            class="w-full h-48 object-cover rounded-[30px] mt-3"
+          />
+          <div class="flex items-center justify-between mt-4">
+            <h3 class="text-xl font-title">Spring Boot</h3>
+            <button
+              class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title"
+            >
+              Participer
+            </button>
+          </div>
+          <p class="flex flex-col mt-2 text-base">
+            <span><i class="fa-regular fa-calendar"></i> 16/12/2025</span>
+            <span><i class="fa-solid fa-location-dot"></i> Bloc G</span>
+          </p>
+          <!-- ICONES EN BAS A DROITE -->
+          <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+            <i
+              class="fa-regular fa-comment cursor-pointer"
+              style="color: #8fd4f3"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#8FD4F3'"
+            ></i>
+            <i
+              class="fa-regular fa-heart cursor-pointer"
+              style="color: #f7b194"
+              onclick="toggleHeart(this)"
+              onmouseover="this.style.color='#F9D5A7'"
+              onmouseout="this.style.color='#F7B194'"
+            ></i>
+            <i
+              class="fa-regular fa-eye cursor-pointer"
+              style="color: #f9d5a7"
+              onmouseover="this.style.color='#F7B194'"
+              onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
+            ></i>
+          </div>
+        </div>
+
+
+
+
+
+        
       </div>
+      </div>
+
+       
+      <div class="flex justify-center mt-8">
+  <button id="loadMoreBtn"
+    class="px-8 py-3 bg-byzantium text-white rounded-[35px] text-button font-title hover:bg-byzantium/80 transition">
+    Voir plus
+  </button>
+</div>
+
+<div class="flex justify-center mt-4">
+  <button id="showLessBtn"
+    class="px-8 py-3 bg-melon text-black rounded-[35px] text-button font-title hover:bg-melon/80 transition hidden">
+    Voir moins
+  </button>
+</div>
+
+
     </section>
 
     <!-- SECTION MAP -->
-    <section class="container mx-auto px-8 mt-16  mb-10 ">
+    <section id="mapSection" class="container mx-auto px-8 mt-16  mb-10 ">
       <h2 class="text-h2 font-title text-byzantium text-center mb-6">
         Localiser Les événements
       </h2>
@@ -383,7 +719,7 @@
           type="text"
           id="searchEvent"
           placeholder="Rechercher un événement..."
-          class="px-10 py-2 rounded-[35px] border border-[#F9D5A7] w-full shadow-lg text-black placeholder-black focus:outline-none focus:ring-2 focus:ring-[#F9D5A7]"
+          class="px-10 py-2 rounded-[35px] border border-[#F9D5A7] w-full shadow-lg text-black placeholder-grey focus:outline-none focus:ring-2 focus:ring-[#F9D5A7]"
         />
         <i
           class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-black"
@@ -451,6 +787,52 @@
     .then(data => {
       document.getElementById("footerContainer").innerHTML = data;
     });
+
+
+
+    //afficher les cards masquées lorsqu'on clique sur voir plus
+    // Sélection des boutons
+const loadMoreBtn = document.getElementById("loadMoreBtn");
+const showLessBtn = document.getElementById("showLessBtn");
+
+// Bouton "Voir plus"
+loadMoreBtn.addEventListener("click", () => {
+  const hiddenCards = document.querySelectorAll(".event-card.hidden");
+
+  hiddenCards.forEach(card => {
+    card.classList.remove("hidden"); // Afficher les cartes
+  });
+
+  loadMoreBtn.classList.add("hidden");   // Cacher "Voir plus"
+  showLessBtn.classList.remove("hidden"); // Afficher "Voir moins"
+});
+
+// Bouton "Voir moins"
+showLessBtn.addEventListener("click", () => {
+  const allCards = document.querySelectorAll(".event-card");
+
+  // Cacher seulement les cartes supplémentaires (pas les 6 premières)
+  allCards.forEach((card, index) => {
+    if (index >= 6) {
+      card.classList.add("hidden");
+    }
+  });
+
+  showLessBtn.classList.add("hidden");   // Cacher "Voir moins"
+  loadMoreBtn.classList.remove("hidden"); // Ré‑afficher "Voir plus"
+});
+
+
+//le cœur se remplisse quand tu cliques dessus
+function toggleHeart(icon) {
+    
+    icon.classList.toggle('fa-regular');
+    icon.classList.toggle('fa-solid');
+  }
+
+
+
+    
 </script>
 
 

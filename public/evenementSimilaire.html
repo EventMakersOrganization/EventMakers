@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création avec événement similaire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-white min-h-screen font-body flex flex-col">
+      <!-- HEADER -->
+    <div id="headerContainer"></div>
+
+      <button 
+  onclick="history.back()" 
+  class="mt-5 ml-5 text-3xl text-byzantium block w-fit"
+>
+  <i class="fa-solid fa-arrow-left"></i>
+</button>
+
+
+      <div class="h-10"></div>
+<div class="scale-[0.8] origin-top w-full ">
+      <div class="mx-4 bg-[#F0BC58]/10 p-6 rounded-3xl shadow-lg border border-xanthous">
+
+        <div class="flex items-center justify-between mb-8">
+            
+            
+            <h1 class="font-title font-semibold text-h1 text-center flex-1">Création avec événement similaire</h1>
+            
+            <button class="bg-byzantium text-white px-6 py-3 rounded-full font-body font-semibold text-button hover:opacity-90 transition">
+                Créer sans modèle
+            </button>
+        </div>
+        <div class="mb-6">
+            <h2 class="font-title font-semibold text-h2 mb-4">Sélectionnez un événement modèle</h2>
+            
+            <div class="relative">
+    <!-- 🔍 Loupe à GAUCHE -->
+    <button class="absolute left-4 top-1/2 transform -translate-y-1/2 text-black">
+        <svg width="28" height="28" viewBox="0 0 24 24" 
+             fill="none" stroke="currentColor" stroke-width="2" 
+             stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+        </svg>
+    </button>
+
+    <!-- 📝 Champ input avec texte noir + bordure #F9D5A7 -->
+    <input
+        type="text"
+        placeholder="Rechercher un événement"
+        class="w-full px-12 py-4 pl-14 rounded-full border-2 border-[#F9D5A7] 
+               font-body text-black text-p
+               focus:outline-none focus:border-[#F9D5A7]"
+    >
+</div>
+
+        </div>
+
+        <div class="space-y-4">
+            <div class="bg-xanthous rounded-2xl p-6">
+                <div class="flex items-center mb-3">
+                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9M16.5 3.5l4 4-12 12H4v-4L16.5 3.5z"/>
+                    </svg>
+                    <h3 class="font-title font-semibold text-h2">Réunion Club Informatique</h3>
+                </div>
+                
+                <div class="flex items-center mb-4 ml-11">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <p class="font-body font-semibold text-p">Mardi 23 Octobre | 14H00 - 15H00</p>
+                </div>
+                
+                <button class="bg-byzantium text-white px-8 py-3 rounded-full font-body font-semibold text-button ml-11 hover:opacity-90 transition">
+                    Utiliser ce modèle
+                </button>
+            </div>
+
+
+            <div class="bg-xanthous rounded-2xl p-6">
+                <div class="flex items-center mb-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9M16.5 3.5l4 4-12 12H4v-4L16.5 3.5z"/>
+                    </svg>
+                    <h3 class="font-title font-semibold text-h2">AI conference</h3>
+                </div>
+                
+                <div class="flex items-center mb-4 ml-11">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <p class="font-body font-semibold text-p">Jeudi 26 Octobre | 8H00 - 9H00</p>
+                </div>
+                
+                <button class="bg-byzantium text-white px-8 py-3 rounded-full font-body font-semibold text-button ml-11 hover:opacity-90 transition">
+                    Utilise ce modèle
+                </button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div id="footerContainer"></div>
+      <script>
+  function initSidebar() {
+    const sidebar = document.getElementById("profileSidebar");
+    const backdrop = document.getElementById("sidebarBackdrop");
+    const openBtn = document.getElementById("openSidebar");
+    const closeBtn = document.getElementById("closeSidebar");
+
+    if (!sidebar || !backdrop || !openBtn || !closeBtn) return;
+
+    openBtn.onclick = () => {
+      sidebar.classList.remove("translate-x-full");
+      backdrop.classList.remove("hidden");
+    };
+
+    closeBtn.onclick = () => {
+      sidebar.classList.add("translate-x-full");
+      backdrop.classList.add("hidden");
+    };
+
+    backdrop.onclick = () => {
+      sidebar.classList.add("translate-x-full");
+      backdrop.classList.add("hidden");
+    };
+  }
+
+  fetch("./header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("headerContainer").innerHTML = data;
+      initSidebar(); 
+    });
+
+  fetch("./footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footerContainer").innerHTML = data;
+    });
+
+
+
+const loadMoreBtn = document.getElementById("loadMoreBtn");
+const showLessBtn = document.getElementById("showLessBtn");
+
+
+loadMoreBtn.addEventListener("click", () => {
+  const hiddenCards = document.querySelectorAll(".event-card.hidden");
+
+  hiddenCards.forEach(card => {
+    card.classList.remove("hidden"); 
+  });
+
+  loadMoreBtn.classList.add("hidden");  
+  showLessBtn.classList.remove("hidden");
+});
+
+
+showLessBtn.addEventListener("click", () => {
+  const allCards = document.querySelectorAll(".event-card");
+
+  allCards.forEach((card, index) => {
+    if (index >= 6) {
+      card.classList.add("hidden");
+    }
+  });
+
+  showLessBtn.classList.add("hidden");  
+  loadMoreBtn.classList.remove("hidden"); 
+});   
+</script>
+</body>
+</html>

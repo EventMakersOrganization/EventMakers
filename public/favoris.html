@@ -19,11 +19,38 @@
     <!-- HEADER -->
     <div id="headerContainer"></div>
 
+<button onclick="history.back()" class="ml-5 mt-5 text-3xl text-byzantium">
+    <i class="fa-solid fa-arrow-left"></i>
+</button>
+
+
+
     <!-- SECTION FAVORIS -->
-    <section class="container mx-auto px-8 mt-14 ">
-      <h2 class="text-h2 font-title text-byzantium text-center mb-10">
-        Mes Favoris
-      </h2>
+    <section class="container mx-auto px-8 mt-14 mb-20 ">
+     <!-- TITRE + BOUTONS -->
+<div class="relative flex justify-center items-center mb-10">
+
+  <!-- Bouton filtrage à gauche -->
+  <button
+    class="absolute left-0 md:left-16 text-byzantium text-2xl p-2 rounded-full hover:bg-cardbg transition" onclick="window.location.href='filtrer-event.html'"
+  >
+    <i class="fa-solid fa-filter"></i>
+  </button>
+
+  <!-- Titre centré -->
+  <h2 class="text-h2 font-title text-byzantium">
+    Mes Favoris
+  </h2>
+
+  <!-- Calendrier à droite -->
+  <button
+    class="absolute right-0 md:right-16 text-byzantium text-2xl p-2 rounded-full hover:bg-cardbg transition" onclick="window.location.href='calendrier.html'"
+  >
+    <i class="fa-regular fa-calendar"></i>
+  </button>
+
+</div>
+
 
       <!-- GRILLE DES FAVORIS (max 3 par ligne) -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10 px-10 md:px-16">
@@ -36,6 +63,9 @@
           >
             Concert
           </span>
+
+      
+
 
           <img
             src="../images/popnight.jpg"
@@ -65,10 +95,12 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
             ></i>
             <i
               class="fa-regular fa-eye cursor-pointer"
               style="color: #f9d5a7"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -111,10 +143,12 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
             ></i>
             <i
               class="fa-regular fa-eye cursor-pointer"
               style="color: #f9d5a7"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -157,10 +191,12 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
             ></i>
             <i
               class="fa-regular fa-eye cursor-pointer"
               style="color: #f9d5a7"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -203,10 +239,12 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
             ></i>
             <i
               class="fa-regular fa-eye cursor-pointer"
               style="color: #f9d5a7"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -254,6 +292,13 @@
     .then(data => {
       document.getElementById("footerContainer").innerHTML = data;
     });
+
+    //le cœur se remplisse quand tu cliques dessus
+function toggleHeart(icon) {
+    
+    icon.classList.toggle('fa-regular');
+    icon.classList.toggle('fa-solid');
+  }
 </script>
 
   </body>

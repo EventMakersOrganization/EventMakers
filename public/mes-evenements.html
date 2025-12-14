@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mes Événements - EventMakers</title>
+
+    <!-- CSS généré par Tailwind -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="bg-soft font-body text-black">
+    <!-- HEADER -->
+    <div id="headerContainer"></div>
+
+    <button 
+  onclick="history.back()" 
+  class="mt-5 ml-5 text-3xl text-byzantium block w-fit"
+>
+  <i class="fa-solid fa-arrow-left"></i>
+</button>
+
+    <!-- MAIN CONTENT -->
+    <section class="container mx-auto px-5 mt-10 mb-35">
+  <div class="bg-rosé p-6 rounded-3xl shadow-lg border border-melon mx-4 md:mx-16 mb-20">
+
+      <!-- Page Header -->
+      <div class="flex items-center justify-center gap-4 mb-6">
+    <h1 class="text-h1 font-title text-byzantium">Mes Événements</h1>
+</div>
+
+
+      <!-- Navigation Tabs -->
+      <div class="flex flex-wrap gap-3 mb-8 justify-center md:justify-start">
+        <button 
+          onclick="switchTab(this, 'crees')"
+          class="px-6 py-2 rounded-full bg-melon/50 text-black font-medium hover:bg-melon transition-colors tab-button"
+        >
+          Crées
+        </button>
+        <button 
+          onclick="switchTab(this, 'inscrits')"
+          class="px-6 py-2 rounded-full bg-melon text-black font-medium hover:bg-melon/90 transition-colors tab-button active"
+        >
+          Inscrits
+        </button>
+        <button 
+          onclick="switchTab(this, 'avenir')"
+          class="px-6 py-2 rounded-full bg-melon/50 text-black font-medium hover:bg-melon transition-colors tab-button"
+        >
+          A venir
+        </button>
+        <button 
+          onclick="switchTab(this, 'passe')"
+          class="px-6 py-2 rounded-full bg-melon/50 text-black font-medium hover:bg-melon transition-colors tab-button"
+        >
+          Passé
+        </button>
+      </div>
+
+      <!-- Events Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 px-6">
+
+  <!-- 🔹 CARD 1 : High Tech -->
+  <div class="event-card bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative">
+    <span class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10">
+      Expositions
+    </span>
+
+    <img
+      src="../images/hightech.jpg"
+      alt="High Tech"
+      class="w-full h-48 object-cover rounded-[30px] mt-3"
+    />
+
+    <div class="flex items-center justify-between mt-4">
+      <h3 class="text-xl font-title">High Tech</h3>
+      <button class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title">
+        Participer
+      </button>
+    </div>
+
+    <p class="flex flex-col mt-2 text-base">
+      <span><i class="fa-regular fa-calendar"></i> 26/11/2025</span>
+      <span><i class="fa-solid fa-location-dot"></i> Bloc G</span>
+    </p>
+
+    <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+      <i class="fa-regular fa-comment cursor-pointer" style="color:#8fd4f3"></i>
+      <i class="fa-regular fa-heart cursor-pointer" style="color:#f7b194"  onclick="toggleHeart(this)"></i>
+      <i class="fa-regular fa-eye cursor-pointer" style="color:#f9d5a7" onclick="window.location.href='detailsEvents.html'"></i>
+    </div>
+  </div>
+
+
+  <!-- 🔹 CARD 2 : Atelier React + Tailwind -->
+  <div class="event-card bg-cardbg shadow-lg p-4 rounded-[30px] border hover:shadow-xl transition relative">
+    <span class="absolute top-3 left-3 bg-xanthous px-3 py-1 rounded-[15px] text-sm z-10">
+      Atelier
+    </span>
+
+    <img
+      src="../images/reacttail.jpg"
+      alt="Atelier React + Tailwind"
+      class="w-full h-48 object-cover rounded-[30px] mt-3"
+    />
+
+    <div class="flex items-center justify-between mt-4">
+      <h3 class="text-xl font-title">Atelier React + Tailwind</h3>
+      <button class="py-2 px-4 bg-tertbut text-black rounded-[35px] text-button font-medium font-title">
+        Participer
+      </button>
+    </div>
+
+    <p class="flex flex-col mt-2 text-base">
+      <span><i class="fa-regular fa-calendar"></i> 25/11/2025</span>
+      <span><i class="fa-solid fa-location-dot"></i> Amphi central</span>
+    </p>
+
+    <div class="absolute bottom-3 right-3 flex gap-4 text-lg">
+      <i class="fa-regular fa-comment cursor-pointer" style="color:#8fd4f3"></i>
+      <i class="fa-regular fa-heart cursor-pointer" style="color:#f7b194" onclick="toggleHeart(this)"></i>
+      <i class="fa-regular fa-eye cursor-pointer" style="color:#f9d5a7" onclick="window.location.href='detailsEvents.html'"></i>
+    </div>
+  </div>
+
+</div>
+
+    </div>
+
+    <!-- Floating Action Button -->
+    <a
+      href="creer-evenement.html"
+      class="fixed bottom-8 right-8 w-16 h-16 bg-byzantium text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-byzantium/90 transition-all hover:scale-110 z-50"
+      title="Créer un événement"
+    >
+      <i class="fa-solid fa-plus text-2xl"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <div id="footerContainer"></div>
+
+
+    <!-- JS -->
+    <script>
+      function initSidebar() {
+        const sidebar = document.getElementById("profileSidebar");
+        const backdrop = document.getElementById("sidebarBackdrop");
+        const openBtn = document.getElementById("openSidebar");
+        const closeBtn = document.getElementById("closeSidebar");
+
+        if (!sidebar || !backdrop || !openBtn || !closeBtn) return;
+
+        openBtn.onclick = () => {
+          sidebar.classList.remove("translate-x-full");
+          backdrop.classList.remove("hidden");
+        };
+
+        closeBtn.onclick = () => {
+          sidebar.classList.add("translate-x-full");
+          backdrop.classList.add("hidden");
+        };
+
+        backdrop.onclick = () => {
+          sidebar.classList.add("translate-x-full");
+          backdrop.classList.add("hidden");
+        };
+      }
+
+      fetch("./header.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("headerContainer").innerHTML = data;
+          initSidebar();
+        });
+
+      fetch("./footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footerContainer").innerHTML = data;
+        });
+
+      // Tab switching functionality
+      function switchTab(button, tabName) {
+        // Remove active class from all tabs
+        document.querySelectorAll('.tab-button').forEach(btn => {
+          btn.classList.remove('bg-melon');
+          btn.classList.add('bg-melon/50');
+        });
+
+        // Add active class to clicked tab
+        button.classList.remove('bg-melon/50');
+        button.classList.add('bg-melon');
+
+        // Here you could filter events based on tabName
+        // For now, we'll just switch the active tab
+        console.log('Switched to tab:', tabName);
+      }
+
+
+      //le cœur se remplisse quand tu cliques dessus
+function toggleHeart(icon) {
+    
+    icon.classList.toggle('fa-regular');
+    icon.classList.toggle('fa-solid');
+  }
+
+
+    </script>
+  </body>
+</html>

@@ -37,18 +37,20 @@
        <!-- MENU DE NAVIGATION -->
       <div class="hidden md:flex items-center space-x-8 font-body text-lg">
         <a href="index.html" class="hover:text-byzantium transition-colors">Accueil</a>
-        <a href="evenements.html" class="hover:text-byzantium transition-colors">Événements</a>
+       <a href="index.html#eventsSection" class="hover:text-byzantium transition-colors">Événements</a>
         <a href="apropos.html" class="hover:text-byzantium transition-colors">À propos</a>
       </div>
 
       <!-- User Actions -->
       <div class="flex items-center space-x-4">
         <!-- Messagerie -->
-        <button
-          class="w-10 h-10 rounded-full bg-black border-2 border-gray-200 flex items-center justify-center hover:border-byzantium transition-colors"
-        >
-          <i class="fa-regular fa-comment text-white"></i>
-        </button>
+       <button
+  onclick="window.location.href='ListeDesMessages.html'"
+  class="w-10 h-10 rounded-full bg-black border-2 border-gray-200 flex items-center justify-center hover:border-byzantium transition-colors"
+>
+  <i class="fa-regular fa-comment text-white"></i>
+</button>
+
 
         <!-- Profil : ouvrir sidebar -->
         <button
