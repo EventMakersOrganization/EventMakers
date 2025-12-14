@@ -17,28 +17,22 @@
 
     <!-- 🌟 SECTION CALENDRIER -->
     <section class="container mx-auto px-5 mt-10 mb-20">
-      <!-- 🌿 Conteneur du calendrier -->
-      <div class="bg-rosé p-6 rounded-3xl shadow-lg border border-melon mx-4">
+      <div class="bg-rosé p-6 rounded-3xl shadow-lg border border-melon mx-4 md:mx-16">
+
         <!-- Navigation mois -->
         <div class="flex justify-center items-center gap-6 mb-6">
-          <button
-            id="prevMonth"
-            class="px-4 py-2 bg-byzantium text-white rounded-xl hover:bg-byzantium/80"
-          >
+          <button id="prevMonth" class="px-4 py-2 bg-byzantium text-white rounded-xl hover:bg-byzantium/80">
             ←
           </button>
 
           <h2 id="monthYear" class="font-title text-2xl"></h2>
 
-          <button
-            id="nextMonth"
-            class="px-4 py-2 bg-byzantium text-white rounded-xl hover:bg-byzantium/80"
-          >
+          <button id="nextMonth" class="px-4 py-2 bg-byzantium text-white rounded-xl hover:bg-byzantium/80">
             →
           </button>
         </div>
 
-        <!-- Grille calendrier -->
+        <!-- Jours semaine -->
         <div class="grid grid-cols-7 gap-3 text-center font-body text-lg">
           <div class="font-bold">Lun</div>
           <div class="font-bold">Mar</div>
@@ -49,6 +43,7 @@
           <div class="font-bold text-melon">Dim</div>
         </div>
 
+        <!-- Jours -->
         <div id="calendarDays" class="grid grid-cols-7 gap-3 mt-4"></div>
       </div>
     </section>
@@ -57,88 +52,51 @@
     <div id="footerContainer"></div>
 
     <script>
-      //header et footer et sidebar
-      function initSidebar() {
-        const sidebar = document.getElementById("profileSidebar");
-        const backdrop = document.getElementById("sidebarBackdrop");
-        const openBtn = document.getElementById("openSidebar");
-        const closeBtn = document.getElementById("closeSidebar");
+      // HEADER + FOOTER chargement
+      function initSidebar() {}
+      fetch("./header.html").then(r => r.text()).then(data => {
+        document.getElementById("headerContainer").innerHTML = data;
+        initSidebar();
+      });
+      fetch("./footer.html").then(r => r.text()).then(data => {
+        document.getElementById("footerContainer").innerHTML = data;
+      });
 
-        if (!sidebar || !backdrop || !openBtn || !closeBtn) return;
-
-        openBtn.onclick = () => {
-          sidebar.classList.remove("translate-x-full");
-          backdrop.classList.remove("hidden");
-        };
-
-        closeBtn.onclick = () => {
-          sidebar.classList.add("translate-x-full");
-          backdrop.classList.add("hidden");
-        };
-
-        backdrop.onclick = () => {
-          sidebar.classList.add("translate-x-full");
-          backdrop.classList.add("hidden");
-        };
-      }
-
-      // 👉 Attendre que le header soit chargé
-      fetch("./header.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("headerContainer").innerHTML = data;
-          initSidebar(); // 🔥 maintenant le script trouve les boutons !
-        });
-
-      fetch("./footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("footerContainer").innerHTML = data;
-        });
-
-      //caldenrier js
+      // -------- CALENDRIER ----------
       const events = [
         { day: 5, month: 12, year: 2025 },
         { day: 16, month: 12, year: 2025 },
         { day: 28, month: 12, year: 2025 },
         { day: 24, month: 12, year: 2025 },
       ];
+
       const monthYear = document.getElementById("monthYear");
       const calendarDays = document.getElementById("calendarDays");
 
       let date = new Date();
+      let activeButton = null; // bouton "+" affiché
 
       function generateCalendar() {
         const year = date.getFullYear();
         const month = date.getMonth();
 
-        // Affichage du mois
         monthYear.textContent = date.toLocaleDateString("fr-FR", {
           month: "long",
-          year: "numeric",
+          year: "numeric"
         });
 
-        // Supprimer anciennes cases
         calendarDays.innerHTML = "";
 
-        // Début du mois
         const firstDay = new Date(year, month, 1).getDay();
         const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-        // Décalage pour Lundi = 1
         const startIndex = firstDay === 0 ? 6 : firstDay - 1;
 
-        // Cases vides
         for (let i = 0; i < startIndex; i++) {
           calendarDays.innerHTML += `<div></div>`;
         }
 
-        // Jours du mois
         for (let i = 1; i <= daysInMonth; i++) {
-          // Vérifie si ce jour a un event
-          const hasEvent = events.some(
-            (ev) => ev.day === i && ev.month === month + 1 && ev.year === year
-          );
+          const hasEvent = events.some(ev => ev.day === i && ev.month === month + 1 && ev.year === year);
 
           const isToday =
             i === new Date().getDate() &&
@@ -146,29 +104,38 @@
             year === new Date().getFullYear();
 
           calendarDays.innerHTML += `
-        <div class="h-14 flex items-center justify-center relative">
+            <div class="day h-16 flex flex-col items-center justify-start relative cursor-pointer">
+              <span class="${isToday ? "w-10 h-10 border-2 border-byzantium rounded-full flex items-center justify-center" : ""}">
+                ${i}
+              </span>
 
-        <span class="
-            ${
-              isToday
-                ? "w-10 h-10 border-2 border-byzantium rounded-full flex items-center justify-center"
-                : ""
-            }
-        ">
-            ${i}
-        </span>
+              ${hasEvent ? `
+                <span class="w-2 h-2 bg-byzantium rounded-full mt-1"></span>
+              ` : ""}
+            </div>
+          `;
+        }
 
-        ${
-          hasEvent
-            ? `
-            <span class="absolute left-1/2 -bottom-1 transform -translate-x-1/2
-            w-2 h-2 bg-byzantium rounded-full"></span>
-        `
-            : ""
-        }
-    </div>
-    `;
-        }
+        // Ajouter les événements de clic
+        document.querySelectorAll(".day").forEach(dayDiv => {
+          dayDiv.addEventListener("click", function () {
+            const dayNumber = this.querySelector("span").innerText;
+
+            // Retirer ancien bouton
+            if (activeButton) activeButton.remove();
+
+            // Créer bouton +
+            const btn = document.createElement("button");
+            btn.innerText = "+";
+            btn.className =
+              "mt-1 text-white bg-byzantium w-6 h-6 rounded-full text-sm flex items-center justify-center";
+            btn.style.position = "absolute";
+            btn.style.bottom = "-5px";
+
+            this.appendChild(btn);
+            activeButton = btn;
+          });
+        });
       }
 
       document.getElementById("prevMonth").onclick = () => {
@@ -183,5 +150,6 @@
 
       generateCalendar();
     </script>
+
   </body>
 </html>

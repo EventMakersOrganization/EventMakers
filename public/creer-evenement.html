@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Créer un événement - EventMakers</title>
+
+    <!-- CSS généré par Tailwind -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="bg-soft font-body text-black">
+    <!-- HEADER -->
+    <div id="headerContainer"></div>
+
+    <button 
+  onclick="history.back()" 
+  class="mt-5 ml-5 text-3xl text-byzantium block w-fit"
+>
+  <i class="fa-solid fa-arrow-left"></i>
+</button>
+
+    <!-- MAIN -->
+    <div class="container mx-auto px-5 mt-10 mb-20">
+    <div class="bg-rosé border-2 border-xanthous rounded-3xl shadow-lg p-8 mx-4 md:mx-16">
+
+
+        <!-- TITLE -->
+        <div class="flex items-center gap-4 mb-8">
+         
+          <div>
+            <h1 class="text-2xl font-title text-byzantium">
+              Créer un nouvel événement
+            </h1>
+            <p class="text-sm text-gray-600">
+              Remplissez les informations ci-dessous
+            </p>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <form class="space-y-6">
+
+          <!-- Nom -->
+          <div>
+            <label class="block text-sm font-medium mb-1">Nom d’événement</label>
+            <input
+              type="text"
+              placeholder="Saisir le nom"
+              class="w-full px-4 py-3 rounded-xl border-2 border-xanthous focus:ring-2 focus:ring-xanthous outline-none"
+            />
+          </div>
+
+          <!-- Description -->
+          <div>
+            <label class="block text-sm font-medium mb-1">Description</label>
+            <textarea
+              rows="4"
+              placeholder="Saisir la description"
+              class="w-full px-4 py-3 rounded-xl border-2 border-xanthous focus:ring-2 focus:ring-xanthous outline-none"
+            ></textarea>
+          </div>
+
+          <!-- Type -->
+          <div>
+            <label class="block text-sm font-medium mb-2">Type d’événement</label>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <label class="flex items-center gap-2 p-3 border border-xanthous rounded-xl cursor-pointer hover:bg-melon">
+                <input type="radio" name="type" class="accent-byzantium" />
+                <span class="text-sm">Conférence</span>
+              </label>
+              <label class="flex items-center gap-2 p-3 border border-xanthous rounded-xl cursor-pointer hover:bg-melon">
+                <input type="radio" name="type" class="accent-byzantium" />
+                <span class="text-sm">Concert</span>
+              </label>
+              <label class="flex items-center gap-2 p-3 border border-xanthous rounded-xl cursor-pointer hover:bg-melon">
+                <input type="radio" name="type" class="accent-byzantium" />
+                <span class="text-sm">Sport</span>
+              </label>
+              <label class="flex items-center gap-2 p-3 border border-xanthous rounded-xl cursor-pointer hover:bg-melon">
+                <input type="radio" name="type" class="accent-byzantium" />
+                <span class="text-sm">Atelier</span>
+              </label>
+              <label class="flex items-center gap-2 p-3 border border-xanthous rounded-xl cursor-pointer hover:bg-melon">
+                <input type="radio" name="type" class="accent-byzantium" />
+                <span class="text-sm">Expositions</span>
+              </label>
+              <label class="flex items-center gap-2 p-3 border border-xanthous rounded-xl cursor-pointer hover:bg-melon">
+                <input type="radio" name="type" class="accent-byzantium" />
+                <span class="text-sm">Hackathon</span>
+              </label>
+              <label class="flex items-center gap-2 p-3 border border-xanthous rounded-xl cursor-pointer hover:bg-melon">
+                <input type="radio" name="type" class="accent-byzantium" />
+                <span class="text-sm">Social & Culturel</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Status -->
+          <div>
+            <label class="block text-sm font-medium mb-2">Status</label>
+            <div class="flex flex-wrap gap-3">
+              <label class="flex items-center gap-2 px-4 py-2 rounded-full border border-xanthous cursor-pointer hover:bg-melon">
+                <input type="radio" name="status" checked class="accent-byzantium" />
+                <span class="text-sm">Actif</span>
+              </label>
+              <label class="flex items-center gap-2 px-4 py-2 rounded-full border border-xanthous cursor-pointer hover:bg-melon">
+                <input type="radio" name="status" class="accent-byzantium" />
+                <span class="text-sm">Annulé</span>
+              </label>
+              <label class="flex items-center gap-2 px-4 py-2 rounded-full border border-xanthous cursor-pointer hover:bg-melon">
+                <input type="radio" name="status" class="accent-byzantium" />
+                <span class="text-sm">Complet</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Dates & Heures -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium mb-1">Date début</label>
+              <input type="date" class="w-full px-4 py-3 rounded-xl border-2 border-xanthous focus:ring-2 focus:ring-xanthous" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1">Date fin</label>
+              <input type="date" class="w-full px-4 py-3 rounded-xl border-2 border-xanthous focus:ring-2 focus:ring-xanthous" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1">Heure début</label>
+              <input type="time" class="w-full px-4 py-3 rounded-xl border-2 border-xanthous focus:ring-2 focus:ring-xanthous" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1">Heure fin</label>
+              <input type="time" class="w-full px-4 py-3 rounded-xl border-2 border-xanthous focus:ring-2 focus:ring-xanthous" />
+            </div>
+          </div>
+
+          <!-- Localisation -->
+          <div>
+            <label class="block text-sm font-medium mb-1">Localisation</label>
+            <input
+              type="text"
+              placeholder="Saisir la localisation"
+              class="w-full px-4 py-3 rounded-xl border-2 border-xanthous focus:ring-2 focus:ring-xanthous"
+            />
+          </div>
+
+          <!-- Club -->
+          <div>
+            <label class="block text-sm font-medium mb-1">Club organisateur</label>
+            <input
+              type="text"
+              placeholder="Nom du club"
+              class="w-full px-4 py-3 rounded-xl border-2 border-xanthous focus:ring-2 focus:ring-xanthous"
+            />
+          </div>
+
+          <!-- Places & Prix -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium mb-1">Nombre de places</label>
+              <input type="number" class="w-full px-4 py-3 rounded-xl border-2 border-xanthous focus:ring-2 focus:ring-xanthous" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1">Prix</label>
+              <input type="number" step="0.01" class="w-full px-4 py-3 rounded-xl border-2 border-xanthous focus:ring-2 focus:ring-xanthous" />
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex justify-end gap-4 pt-6">
+            <button class="px-8 py-3 rounded-full bg-byzantium text-white font-title hover:bg-byzantium/90">
+              Créer
+            </button>
+            <button
+              type="button"
+              onclick="history.back()"
+              class="px-8 py-3 rounded-full bg-melon text-black font-title hover:bg-melon/90"
+            >
+              Annuler
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footerContainer"></div>
+
+    <!-- JS -->
+    <script>
+      fetch("./header.html")
+        .then(res => res.text())
+        .then(data => (document.getElementById("headerContainer").innerHTML = data));
+
+      fetch("./footer.html")
+        .then(res => res.text())
+        .then(data => (document.getElementById("footerContainer").innerHTML = data));
+    </script>
+  </body>
+</html>

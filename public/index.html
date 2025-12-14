@@ -36,11 +36,13 @@
         </p>
 
         <div class="mt-8 flex gap-6">
-          <button
-            class="px-6 py-3 bg-byzantium text-white rounded-[35px] text-button font-medium font-title"
-          >
-            Explorer les événements
-          </button>
+         <button
+  onclick="document.getElementById('eventsSection').scrollIntoView({ behavior: 'smooth' });"
+  class="px-6 py-3 bg-byzantium text-white rounded-[35px] text-button font-medium font-title"
+>
+  Explorer les événements
+</button>
+
 
           <button
             class="px-6 py-3 bg-melon text-black rounded-[35px] text-button font-medium font-title"
@@ -61,12 +63,14 @@
     <section id="eventsSection" class="container mx-auto px-8 mt-12">
       <!-- Conteneur relatif pour titre et icônes -->
       <div class="relative flex justify-center items-center mb-2">
-        <!-- Icône de filtrage à gauche -->
-        <button
-          class="absolute left-16 text-byzantium text-2xl p-2 rounded-full hover:bg-cardbg transition"
-        >
-          <i class="fa-solid fa-filter"></i>
-        </button>
+       <!-- Icône de filtrage à gauche -->
+<button
+  class="absolute left-16 text-byzantium text-2xl p-2 rounded-full hover:bg-cardbg transition"
+  onclick="window.location.href='filtrer-event.html'"
+>
+  <i class="fa-solid fa-filter"></i>
+</button>
+
 
         <!-- Titre centré -->
         <h2 class="text-h2 font-title text-byzantium">
@@ -124,6 +128,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -132,6 +137,7 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -171,6 +177,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -179,6 +186,7 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -218,6 +226,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -226,6 +235,7 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -265,6 +275,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -273,6 +284,7 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -312,6 +324,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -320,6 +333,7 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -359,6 +373,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -367,6 +382,7 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -406,6 +422,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -414,6 +431,7 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -453,6 +471,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -461,6 +480,7 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -500,6 +520,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -508,6 +529,7 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -547,6 +569,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -555,6 +578,7 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -594,6 +618,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -602,6 +627,7 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -641,6 +667,7 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
               onmouseover="this.style.color='#F9D5A7'"
               onmouseout="this.style.color='#F7B194'"
             ></i>
@@ -649,6 +676,7 @@
               style="color: #f9d5a7"
               onmouseover="this.style.color='#F7B194'"
               onmouseout="this.style.color='#F9D5A7'"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -680,7 +708,7 @@
     </section>
 
     <!-- SECTION MAP -->
-    <section class="container mx-auto px-8 mt-16  mb-10 ">
+    <section id="mapSection" class="container mx-auto px-8 mt-16  mb-10 ">
       <h2 class="text-h2 font-title text-byzantium text-center mb-6">
         Localiser Les événements
       </h2>
@@ -691,7 +719,7 @@
           type="text"
           id="searchEvent"
           placeholder="Rechercher un événement..."
-          class="px-10 py-2 rounded-[35px] border border-[#F9D5A7] w-full shadow-lg text-black placeholder-black focus:outline-none focus:ring-2 focus:ring-[#F9D5A7]"
+          class="px-10 py-2 rounded-[35px] border border-[#F9D5A7] w-full shadow-lg text-black placeholder-grey focus:outline-none focus:ring-2 focus:ring-[#F9D5A7]"
         />
         <i
           class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-black"
@@ -793,6 +821,14 @@ showLessBtn.addEventListener("click", () => {
   showLessBtn.classList.add("hidden");   // Cacher "Voir moins"
   loadMoreBtn.classList.remove("hidden"); // Ré‑afficher "Voir plus"
 });
+
+
+//le cœur se remplisse quand tu cliques dessus
+function toggleHeart(icon) {
+    
+    icon.classList.toggle('fa-regular');
+    icon.classList.toggle('fa-solid');
+  }
 
 
 

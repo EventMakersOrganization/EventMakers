@@ -32,7 +32,7 @@
 
   <!-- Bouton filtrage à gauche -->
   <button
-    class="absolute left-0 md:left-16 text-byzantium text-2xl p-2 rounded-full hover:bg-cardbg transition"
+    class="absolute left-0 md:left-16 text-byzantium text-2xl p-2 rounded-full hover:bg-cardbg transition" onclick="window.location.href='filtrer-event.html'"
   >
     <i class="fa-solid fa-filter"></i>
   </button>
@@ -95,10 +95,12 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
             ></i>
             <i
               class="fa-regular fa-eye cursor-pointer"
               style="color: #f9d5a7"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -141,10 +143,12 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
             ></i>
             <i
               class="fa-regular fa-eye cursor-pointer"
               style="color: #f9d5a7"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -187,10 +191,12 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
             ></i>
             <i
               class="fa-regular fa-eye cursor-pointer"
               style="color: #f9d5a7"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -233,10 +239,12 @@
             <i
               class="fa-regular fa-heart cursor-pointer"
               style="color: #f7b194"
+              onclick="toggleHeart(this)"
             ></i>
             <i
               class="fa-regular fa-eye cursor-pointer"
               style="color: #f9d5a7"
+              onclick="window.location.href='detailsEvents.html'"
             ></i>
           </div>
         </div>
@@ -284,6 +292,13 @@
     .then(data => {
       document.getElementById("footerContainer").innerHTML = data;
     });
+
+    //le cœur se remplisse quand tu cliques dessus
+function toggleHeart(icon) {
+    
+    icon.classList.toggle('fa-regular');
+    icon.classList.toggle('fa-solid');
+  }
 </script>
 
   </body>
